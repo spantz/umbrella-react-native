@@ -1,21 +1,24 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
+'use strict';
 
 import React, {Component} from 'react';
 import {
     AppRegistry,
     StyleSheet,
     Text,
-    View
+    View,
+    Navigator
 } from 'react-native';
+
+import WelcomeScene from './components/WelcomeScene';
 
 export default class umbrellaReactNative extends Component {
     render() {
+        let initialRoute = {
+            title: 'Welcome',
+            index: 0
+        };
         return (
-
+            <WelcomeScene/>
         );
     }
 }
