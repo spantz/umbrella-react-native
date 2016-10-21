@@ -2,50 +2,79 @@
 // @flow
 
 import React, {Component} from 'react';
-import {Navigator} from 'react-native';
+import Swiper from 'react-native-swiper';
+import {
+    View,
+    Text,
+    StyleSheet,
+    TouchableOpacity,
+    Image
+} from 'react-native';
 
-import SecondScene from './SecondScene';
+const logo = require('../img/logo.png');
+
+const styles = StyleSheet.create({
+    flex: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    second: {
+        backgroundColor: 'skyblue'
+    },
+    third: {
+        backgroundColor: 'steelblue'
+    },
+    window: {
+        margin: 5
+    },
+    blueBG: {
+        backgroundColor: '#45B3EE'
+    },
+    text: {
+        fontSize: 14
+    },
+    header: {
+        fontSize: 24
+    },
+    logo: {
+        flex: -1,
+        alignItems: 'stretch'
+    }
+});
 
 export default class WelcomeScene extends Component {
+    swiper: Swiper;
+
+    onSwiper(component: Swiper) {
+        this.swiper = component;
+    }
 
     render() {
-        const routes = [
-            {
-                title: 'Welcome',
-                index: 0
-            },
-            {
-                title: 'Second Screen',
-                index: 1
-            }
-        ];
-
         return (
-            <Navigator
-                initialRoute={routes[0]}
-                renderScene={(route, navigator) => {
-                    return (
-                        <SecondScene
-                            title={route.title}
-
-                            onForward={() => {
-                              const nextIndex = route.index + 1;
-                              navigator.push({
-                                title: 'Scene ' + nextIndex,
-                                index: nextIndex,
-                              });
-                            }}
-
-                            // Function to call to go back to the previous scene
-                            onBack={() => {
-                              if (route.index > 0) {
-                                navigator.pop();
-                              }
-                            }}
-                            />
-                    );
-                }}
-            />
+            <Swiper showsPagination={false} loop={false} ref={this.onSwiper.bind(this)}>
+                <View style={[styles.blueBG, styles.flex]}>
+                    <Image source={logo} style={styles.logo} resizeMode="contain"/>
+                    <Text style={styles.header}>
+                        Screen One!
+                    </Text>
+                    <TouchableOpacity onPress={() => {
+                            this.swiper.scrollBy(1);
+                        }}>
+                        <Text>Continue</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={[styles.second, styles.flex]}>
+                    <Text style={styles.text}>
+                        Screen Two!
+                    </Text>
+                </View>
+                <View style={[styles.third, styles.flex]}>
+                    <Text style={styles.text}>
+                        Screen Three!
+                    </Text>
+                </View>
+            </Swiper>
         );
     }
 }
