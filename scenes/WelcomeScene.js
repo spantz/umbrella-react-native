@@ -10,15 +10,11 @@ import {
     Image
 } from 'react-native';
 
-const logo = require('../img/logo.png');
+import GlobalStyles from './../resources/styles/global';
+
+const logo = require('../resources/img/logo.png');
 
 const styles = StyleSheet.create({
-    text: {
-        fontSize: 14
-    },
-    header: {
-        fontSize: 24
-    },
     logo: {
         flex: 1,
         margin: 20,
@@ -32,13 +28,6 @@ const styles = StyleSheet.create({
     },
     first: {
         alignItems: 'stretch',
-        backgroundColor: '#45B3EE'
-    },
-    second: {
-        backgroundColor: 'skyblue'
-    },
-    third: {
-        backgroundColor: 'steelblue'
     },
     alignCenter: {
         alignItems: 'center'
@@ -48,14 +37,14 @@ const styles = StyleSheet.create({
 export default class WelcomeScene extends Component {
     render() {
         return (
-            <View style={[styles.first, styles.screen]}>
+            <View style={[styles.first, GlobalStyles.colors.screen, styles.screen]}>
                 <Image source={logo} style={styles.logo}/>
-                <View style={{alignItems: 'center'}}>
-                    <Text style={[styles.header, styles.alignCenter]}>
+                <View style={styles.alignCenter}>
+                    <Text style={[GlobalStyles.text.hero, styles.alignCenter]}>
                         Screen One!
                     </Text>
                     <TouchableOpacity style={styles.alignCenter} onPress={this.props.onContinue.bind(this)}>
-                        <Text>Continue</Text>
+                        <Text style={GlobalStyles.text.button}>Continue</Text>
                     </TouchableOpacity>
                 </View>
             </View>

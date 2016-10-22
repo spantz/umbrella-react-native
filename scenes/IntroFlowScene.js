@@ -6,6 +6,8 @@ import {Navigator} from 'react-native';
 import WelcomeScene from './WelcomeScene';
 import InfoScene from './InfoScene';
 
+import GlobalStyles from './../resources/styles/global';
+
 export default class IntroFlowScene extends React.Component {
     render() {
         const initialRoute = {
@@ -24,6 +26,7 @@ export default class IntroFlowScene extends React.Component {
 
         return (
             <Navigator
+                style={GlobalStyles.colors.screen}
                 initialRoute={initialRoute}
                 renderScene={(route, navigator) => {
                     let props = route.passProps;
@@ -41,6 +44,10 @@ export default class IntroFlowScene extends React.Component {
                     if (route.reset) {
                         navigator.immediatelyResetRouteStack([route]);
                     }
+                }}
+
+                configureScene={() => {
+                    return Navigator.SceneConfigs.HorizontalSwipeJump;
                 }}
 
                 >

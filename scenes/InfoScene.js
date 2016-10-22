@@ -10,6 +10,7 @@ import {
     TouchableOpacity,
     Image
 } from 'react-native';
+import GlobalStyles from './../resources/styles/global';
 
 export default class InfoScene extends React.Component {
     swiper: Swiper;
@@ -31,7 +32,7 @@ export default class InfoScene extends React.Component {
 
     render() {
         return (
-            <Swiper showsPagination={true} loop={false} ref={this.onSwiperMount}>
+            <Swiper showsPagination={true} loop={false} ref={this.onSwiperMount} style={GlobalStyles.colors.screen}>
                 <View>
                     <Text>
                         Umbrella is here to help you reduce your anxiety, feel better about yourself, and have a brighter day.
