@@ -9,11 +9,11 @@ import {
     Navigator
 } from 'react-native';
 
-import WelcomeScene from './scenes/WelcomeScene';
+import IntroFlowScene from './scenes/IntroFlowScene';
 
 export default class umbrellaReactNative extends Component {
     render() {
-        return <WelcomeScene/>;
+        return <IntroFlowScene/>;
     }
 }
 

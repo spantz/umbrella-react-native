@@ -54,9 +54,7 @@ export default class WelcomeScene extends Component {
                     <Text style={[styles.header, styles.alignCenter]}>
                         Screen One!
                     </Text>
-                    <TouchableOpacity style={styles.alignCenter} onPress={() => {
-                                    this.swiper.scrollBy(1);
-                                }}>
+                    <TouchableOpacity style={styles.alignCenter} onPress={this.props.onContinue.bind(this)}>
                         <Text>Continue</Text>
                     </TouchableOpacity>
                 </View>
