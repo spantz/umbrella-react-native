@@ -2,7 +2,6 @@
 // @flow
 
 import React, {Component} from 'react';
-import Swiper from 'react-native-swiper';
 import {
     View,
     Text,
@@ -19,8 +18,6 @@ const styles = StyleSheet.create({
     },
     header: {
         fontSize: 24
-    },
-    swiper: {
     },
     logo: {
         flex: 1,
@@ -49,39 +46,21 @@ const styles = StyleSheet.create({
 });
 
 export default class WelcomeScene extends Component {
-    swiper: Swiper;
-
-    onSwiper(component: Swiper) {
-        this.swiper = component;
-    }
-
     render() {
         return (
-            <Swiper showsPagination={false} styles={styles.swiper} loop={false} ref={this.onSwiper.bind(this)}>
-                <View style={[styles.first, styles.screen]}>
-                    <Image source={logo} style={styles.logo}/>
-                    <View style={{alignItems: 'center'}}>
-                        <Text style={[styles.header, styles.alignCenter]}>
-                            Screen One!
-                        </Text>
-                        <TouchableOpacity style={styles.alignCenter} onPress={() => {
-                                this.swiper.scrollBy(1);
-                            }}>
-                            <Text>Continue</Text>
-                        </TouchableOpacity>
-                    </View>
-                </View>
-                <View style={[styles.second, styles.screen]}>
-                    <Text style={styles.text}>
-                        Screen Two!
+            <View style={[styles.first, styles.screen]}>
+                <Image source={logo} style={styles.logo}/>
+                <View style={{alignItems: 'center'}}>
+                    <Text style={[styles.header, styles.alignCenter]}>
+                        Screen One!
                     </Text>
+                    <TouchableOpacity style={styles.alignCenter} onPress={() => {
+                                    this.swiper.scrollBy(1);
+                                }}>
+                        <Text>Continue</Text>
+                    </TouchableOpacity>
                 </View>
-                <View style={[styles.third, styles.screen]}>
-                    <Text style={styles.text}>
-                        Screen Three!
-                    </Text>
-                </View>
-            </Swiper>
+            </View>
         );
     }
 }
