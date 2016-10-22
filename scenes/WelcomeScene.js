@@ -14,10 +14,28 @@ import {
 const logo = require('../img/logo.png');
 
 const styles = StyleSheet.create({
-    flex: {
+    text: {
+        fontSize: 14
+    },
+    header: {
+        fontSize: 24
+    },
+    swiper: {
+    },
+    logo: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
+        margin: 20,
+        width: null,
+        height: null,
+        resizeMode: 'contain',
+        alignItems: 'stretch'
+    },
+    screen: {
+        flex: 1
+    },
+    first: {
+        alignItems: 'stretch',
+        backgroundColor: '#45B3EE'
     },
     second: {
         backgroundColor: 'skyblue'
@@ -25,21 +43,8 @@ const styles = StyleSheet.create({
     third: {
         backgroundColor: 'steelblue'
     },
-    window: {
-        margin: 5
-    },
-    blueBG: {
-        backgroundColor: '#45B3EE'
-    },
-    text: {
-        fontSize: 14
-    },
-    header: {
-        fontSize: 24
-    },
-    logo: {
-        flex: -1,
-        alignItems: 'stretch'
+    alignCenter: {
+        alignItems: 'center'
     }
 });
 
@@ -52,24 +57,26 @@ export default class WelcomeScene extends Component {
 
     render() {
         return (
-            <Swiper showsPagination={false} loop={false} ref={this.onSwiper.bind(this)}>
-                <View style={[styles.blueBG, styles.flex]}>
-                    <Image source={logo} style={styles.logo} resizeMode="contain"/>
-                    <Text style={styles.header}>
-                        Screen One!
-                    </Text>
-                    <TouchableOpacity onPress={() => {
-                            this.swiper.scrollBy(1);
-                        }}>
-                        <Text>Continue</Text>
-                    </TouchableOpacity>
+            <Swiper showsPagination={false} styles={styles.swiper} loop={false} ref={this.onSwiper.bind(this)}>
+                <View style={[styles.first, styles.screen]}>
+                    <Image source={logo} style={styles.logo}/>
+                    <View style={{alignItems: 'center'}}>
+                        <Text style={[styles.header, styles.alignCenter]}>
+                            Screen One!
+                        </Text>
+                        <TouchableOpacity style={styles.alignCenter} onPress={() => {
+                                this.swiper.scrollBy(1);
+                            }}>
+                            <Text>Continue</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
-                <View style={[styles.second, styles.flex]}>
+                <View style={[styles.second, styles.screen]}>
                     <Text style={styles.text}>
                         Screen Two!
                     </Text>
                 </View>
-                <View style={[styles.third, styles.flex]}>
+                <View style={[styles.third, styles.screen]}>
                     <Text style={styles.text}>
                         Screen Three!
                     </Text>
