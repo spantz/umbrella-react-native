@@ -8,6 +8,13 @@ import InfoScene from './InfoScene';
 
 import GlobalStyles from './../resources/styles/global';
 
+const noSwipe = {
+    ...Navigator.SceneConfigs.HorizontalSwipeJump,
+    gestures: {
+        pop: {},
+    },
+};
+
 export default class IntroFlowScene extends React.Component {
     render() {
         const initialRoute = {
@@ -16,18 +23,25 @@ export default class IntroFlowScene extends React.Component {
             passProps: {
                 onContinue: function () {
                     this.props.navigator.push({
-                        index: 0,
-                        component: InfoScene
+                        index: 1,
+                        component: InfoScene,
+                        reset: true
                     });
                 }
             },
             reset: false
         };
 
+        console.log('here2');
+
         return (
             <Navigator
-                style={GlobalStyles.colors.screen}
-                initialRoute={initialRoute}
+                style={[GlobalStyles.colors.screen, GlobalStyles.layout.root]}
+
+                initialRouteStack={[initialRoute]}
+
+                ref="navigator"
+
                 renderScene={(route, navigator) => {
                     let props = route.passProps;
                     if (typeof props !== 'object' || props === null) {
@@ -40,13 +54,17 @@ export default class IntroFlowScene extends React.Component {
                     return factory(props);
                 }}
 
-                onDidFocus={(route, navigator) => {
+                onDidFocus={(route) => {
                     if (route.reset) {
-                        navigator.immediatelyResetRouteStack([route]);
+                        console.log('resetting.');
+                        this.refs.navigator.immediatelyResetRouteStack([route]);
                     }
                 }}
 
-                configureScene={() => {
+                configureScene={(route) => {
+                    if (route.index === 0) {
+                        return noSwipe;
+                    }
                     return Navigator.SceneConfigs.HorizontalSwipeJump;
                 }}
 
