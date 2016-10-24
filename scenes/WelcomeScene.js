@@ -20,8 +20,7 @@ const styles = StyleSheet.create({
         margin: 20,
         width: null,
         height: null,
-        resizeMode: 'contain',
-        alignItems: 'stretch'
+        resizeMode: 'contain'
     },
     screen: {
         flex: 1
@@ -31,21 +30,33 @@ const styles = StyleSheet.create({
     },
     alignCenter: {
         alignItems: 'center'
+    },
+    buttonText: {
+
     }
 });
 
 export default class WelcomeScene extends Component {
     render() {
         return (
-            <View style={[styles.first, GlobalStyles.colors.screen, styles.screen]}>
+            <View style={[styles.first, GlobalStyles.colors.screen, GlobalStyles.layout.root, styles.screen]}>
                 <Image source={logo} style={styles.logo}/>
-                <View style={styles.alignCenter}>
+                <View style={[styles.alignCenter, {flex: 1}]}>
                     <Text style={[GlobalStyles.text.hero, styles.alignCenter]}>
-                        Screen One!
+                        Umbrella
                     </Text>
-                    <TouchableOpacity style={styles.alignCenter} onPress={this.props.onContinue.bind(this)}>
-                        <Text style={GlobalStyles.text.button}>Continue</Text>
-                    </TouchableOpacity>
+                    <Text style={GlobalStyles.text.subHero}>
+                        Your daily resource for mental health.
+                    </Text>
+                    <View style={{flex: 1, flexDirection: 'row', alignItems: 'flex-end'}}>
+                        <View style={{flex: 1}}/>
+                        <TouchableOpacity style={[styles.alignCenter, {marginBottom: 30, justifyContent: 'center', height: 50, flex: 6, backgroundColor: '#fff', borderWidth: 1, borderColor: '#2E8DD6', borderRadius: 10}]} onPress={this.props.onContinue.bind(this)}>
+                            <Text style={[GlobalStyles.text.button, {alignSelf: 'stretch', textAlign: 'center'}]}>
+                                Let's Go
+                            </Text>
+                        </TouchableOpacity>
+                        <View style={{flex: 1}}/>
+                    </View>
                 </View>
             </View>
         );

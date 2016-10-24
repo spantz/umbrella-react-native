@@ -12,6 +12,13 @@ import {
 } from 'react-native';
 import GlobalStyles from './../resources/styles/global';
 
+const styles = StyleSheet.create({
+    flex: {
+        flex: 1,
+        alignItems: 'center'
+    }
+});
+
 export default class InfoScene extends React.Component {
     swiper: Swiper;
 
@@ -32,9 +39,9 @@ export default class InfoScene extends React.Component {
 
     render() {
         return (
-            <Swiper showsPagination={true} loop={false} ref={this.onSwiperMount} style={GlobalStyles.colors.screen}>
-                <View>
-                    <Text>
+            <Swiper showsPagination={true} loop={false} ref={this.onSwiperMount} style={[GlobalStyles.colors.screen]}>
+                <View style={styles.flex}>
+                    <Text style={[GlobalStyles.text.hero]}>
                         Umbrella is here to help you reduce your anxiety, feel better about yourself, and have a brighter day.
                     </Text>
                     <TouchableOpacity onPress={this.goForward}>
@@ -43,16 +50,20 @@ export default class InfoScene extends React.Component {
                         </Text>
                     </TouchableOpacity>
                 </View>
-                <View>
-                    <Text>Two</Text>
+                <View style={styles.flex}>
+                    <Text style={[GlobalStyles.text.hero]}>
+                        Two
+                    </Text>
                     <TouchableOpacity onPress={this.goForward}>
-                        <Text>
+                        <Text style={[GlobalStyles.text.button]}>
                             Great
                         </Text>
                     </TouchableOpacity>
                 </View>
-                <View>
-                    <Text>Three</Text>
+                <View style={styles.flex}>
+                    <Text style={[GlobalStyles.text.hero]}>
+                        Three
+                    </Text>
                 </View>
             </Swiper>
         );

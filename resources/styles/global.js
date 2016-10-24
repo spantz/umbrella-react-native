@@ -15,15 +15,24 @@ export default {
     text: StyleSheet.create({
         hero: {
             fontSize: 28,
-            fontWeight: 'bold'
+            fontWeight: 'bold',
+            color: '#fff'
         },
         subHero: {
             fontSize: 18,
-            fontWeight: "200"
+            fontWeight: "200",
+            color: '#fff'
         },
         button: {
             fontSize: 16,
-            fontWeight: "200"
+            fontWeight: "600",
+            padding: 2,
+            color: '#2E8DD6'
         }
-    })
+    }),
+    layout: {
+        root: {
+            marginTop: 20
+        }
+    }
 };
