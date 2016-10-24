@@ -12,6 +12,8 @@ import {
 
 import GlobalStyles from './../resources/styles/global';
 
+import Button from './components/Button';
+
 const logo = require('../resources/img/logo.png');
 
 const styles = StyleSheet.create({
@@ -31,8 +33,10 @@ const styles = StyleSheet.create({
     alignCenter: {
         alignItems: 'center'
     },
-    buttonText: {
-
+    button: {
+        flexDirection: 'row',
+        alignItems: 'flex-end',
+        flex: 1
     }
 });
 
@@ -48,15 +52,7 @@ export default class WelcomeScene extends Component {
                     <Text style={GlobalStyles.text.subHero}>
                         Your daily resource for mental health.
                     </Text>
-                    <View style={{flex: 1, flexDirection: 'row', alignItems: 'flex-end'}}>
-                        <View style={{flex: 1}}/>
-                        <TouchableOpacity style={[styles.alignCenter, {marginBottom: 30, justifyContent: 'center', height: 50, flex: 6, backgroundColor: '#fff', borderWidth: 1, borderColor: '#2E8DD6', borderRadius: 10}]} onPress={this.props.onContinue.bind(this)}>
-                            <Text style={[GlobalStyles.text.button, {alignSelf: 'stretch', textAlign: 'center'}]}>
-                                Let's Go
-                            </Text>
-                        </TouchableOpacity>
-                        <View style={{flex: 1}}/>
-                    </View>
+                    <Button text="Let's Go" style={styles.button} onPress={this.props.onContinue.bind(this)} />
                 </View>
             </View>
         );
