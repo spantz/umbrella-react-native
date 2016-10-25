@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
 export default class WelcomeScene extends Component {
     render() {
         return (
-            <View style={[styles.rootView, styles.flexOne, GlobalStyles.colors.screen, GlobalStyles.layout.root]}>
+            <View style={[styles.rootView, styles.flexOne, GlobalStyles.layout.root]}>
                 <Image source={logo} style={[styles.logo, styles.flexOne]}/>
                 <View style={[styles.alignCenter, styles.flexOne]}>
                     <Text style={[GlobalStyles.text.hero, styles.alignCenter]}>

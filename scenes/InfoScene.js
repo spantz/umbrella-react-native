@@ -11,12 +11,24 @@ import {
     Image
 } from 'react-native';
 import GlobalStyles from './../resources/styles/global';
+import Button from './components/Button';
 
 const styles = StyleSheet.create({
     flex: {
         flex: 1,
         alignItems: 'center'
-    }
+    },
+    flexOne: {
+        flex: 1
+    },
+    buttonContainer: {
+        flexDirection: 'row',
+        alignItems: 'flex-end'
+    },
+    button: {
+        marginBottom: 90,
+        flex: 6,
+    },
 });
 
 export default class InfoScene extends React.Component {
@@ -39,26 +51,26 @@ export default class InfoScene extends React.Component {
 
     render() {
         return (
-            <Swiper showsPagination={true} loop={false} ref={this.onSwiperMount} style={[GlobalStyles.colors.screen]}>
+            <Swiper showsPagination={true} loop={false} ref={this.onSwiperMount} style={[GlobalStyles.layout.root]}>
                 <View style={styles.flex}>
                     <Text style={[GlobalStyles.text.hero]}>
                         Umbrella is here to help you reduce your anxiety, feel better about yourself, and have a brighter day.
                     </Text>
-                    <TouchableOpacity onPress={this.goForward}>
-                        <Text>
-                            Cool
-                        </Text>
-                    </TouchableOpacity>
+                    <View style={[styles.flexOne, styles.buttonContainer]}>
+                        <View style={styles.flexOne}/>
+                        <Button style={styles.button} text="Cool" onPress={this.goForward}/>
+                        <View style={styles.flexOne}/>
+                    </View>
                 </View>
                 <View style={styles.flex}>
                     <Text style={[GlobalStyles.text.hero]}>
                         Two
                     </Text>
-                    <TouchableOpacity onPress={this.goForward}>
-                        <Text style={[GlobalStyles.text.button]}>
-                            Great
-                        </Text>
-                    </TouchableOpacity>
+                    <View style={[styles.flexOne, styles.buttonContainer]}>
+                        <View style={styles.flexOne}/>
+                        <Button style={styles.button} text="Great" onPress={this.goForward}/>
+                        <View style={styles.flexOne}/>
+                    </View>
                 </View>
                 <View style={styles.flex}>
                     <Text style={[GlobalStyles.text.hero]}>

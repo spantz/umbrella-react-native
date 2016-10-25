@@ -32,11 +32,9 @@ export default class IntroFlowScene extends React.Component {
             reset: false
         };
 
-        console.log('here2');
-
         return (
             <Navigator
-                style={[GlobalStyles.colors.screen, GlobalStyles.layout.root]}
+                style={[GlobalStyles.colors.screen]}
 
                 initialRouteStack={[initialRoute]}
 
@@ -56,16 +54,13 @@ export default class IntroFlowScene extends React.Component {
 
                 onDidFocus={(route) => {
                     if (route.reset) {
-                        console.log('resetting.');
+                        route.reset = false;
                         this.refs.navigator.immediatelyResetRouteStack([route]);
                     }
                 }}
 
-                configureScene={(route) => {
-                    if (route.index === 0) {
-                        return noSwipe;
-                    }
-                    return Navigator.SceneConfigs.HorizontalSwipeJump;
+                configureScene={() => {
+                    return noSwipe;
                 }}
 
                 >
