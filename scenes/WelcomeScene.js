@@ -33,9 +33,16 @@ const styles = StyleSheet.create({
     alignCenter: {
         alignItems: 'center'
     },
-    button: {
+    buttonContainer: {
         flexDirection: 'row',
         alignItems: 'flex-end',
+        flex: 1
+    },
+    button: {
+        marginBottom: 30,
+        flex: 6,
+    },
+    sides: {
         flex: 1
     }
 });
@@ -52,7 +59,16 @@ export default class WelcomeScene extends Component {
                     <Text style={GlobalStyles.text.subHero}>
                         Your daily resource for mental health.
                     </Text>
-                    <Button text="Let's Go" style={styles.button} onPress={this.props.onContinue.bind(this)} />
+                    <View style={styles.buttonContainer}>
+                        <View style={styles.sides}/>
+                        <Button
+                            text="Let's Go"
+                            style={styles.button}
+                            onPress={this.props.onContinue.bind(this)}
+                            />
+                        <View style={styles.sides}/>
+                    </View>
+
                 </View>
             </View>
         );
