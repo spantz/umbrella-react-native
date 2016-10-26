@@ -64,7 +64,10 @@ export default class InfoScene extends React.Component {
                 </View>
                 <View style={styles.flex}>
                     <Text style={[GlobalStyles.text.hero]}>
-                        Two
+                        Use us in the moment when you're having a bad day.
+                    </Text>
+                    <Text style={GlobalStyles.text.subHero}>
+                        We'll help you relax and calm down when you're struggling.
                     </Text>
                     <View style={[styles.flexOne, styles.buttonContainer]}>
                         <View style={styles.flexOne}/>
@@ -74,7 +77,10 @@ export default class InfoScene extends React.Component {
                 </View>
                 <View style={styles.flex}>
                     <Text style={[GlobalStyles.text.hero]}>
-                        Three
+                        Use us every day to build a brighter future.
+                    </Text>
+                    <Text style={GlobalStyles.text.subHero}>
+                        Check in with us to view long-term goals, progress, and work towards a happier you.
                     </Text>
                 </View>
             </Swiper>
