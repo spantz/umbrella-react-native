@@ -5,6 +5,7 @@ import React, {Component} from 'react';
 import {
     View,
     Text,
+    LayoutAnimation,
     StyleSheet,
     TouchableOpacity,
     Image
@@ -43,10 +44,30 @@ const styles = StyleSheet.create({
 });
 
 export default class WelcomeScene extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = { w: 10, h: 10};
+
+        this._onPress = this._onPress.bind(this);
+    } 
+
+    componentWillReceiveProps() {
+        // Animate creation
+        LayoutAnimation.spring();
+        this.setState({w: 100, h: 100})
+    }
+
+    _onPress() {
+        // Animate the update
+        LayoutAnimation.spring();
+        this.setState({w: this.state.w + 25, h: this.state.h + 25})
+    }
+
     render() {
         return (
             <View style={[styles.rootView, styles.flexOne, GlobalStyles.layout.root]}>
-                <Image source={logo} style={[styles.logo, styles.flexOne]}/>
+                <Image source={logo} style={[styles.logo, styles.flexOne, { width: this.state.w, height: this.state.h}]}/>
                 <View style={[styles.alignCenter, styles.flexOne]}>
                     <Text style={[GlobalStyles.text.hero, styles.alignCenter]}>
                         Umbrella
@@ -59,7 +80,7 @@ export default class WelcomeScene extends Component {
                         <Button
                             text="Let's Go"
                             style={styles.button}
-                            onPress={this.props.onContinue.bind(this)}
+                            onPress={this._onPress.bind(this)}
                             />
                         <View style={styles.flexOne}/>
                     </View>

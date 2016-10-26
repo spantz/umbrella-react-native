@@ -14,16 +14,19 @@ export default {
     }),
     text: StyleSheet.create({
         hero: {
+            fontFamily: 'Montserrat-Bold',
             fontSize: 28,
             fontWeight: 'bold',
             color: '#fff'
         },
         subHero: {
+            fontFamily: 'Montserrat-Bold',
             fontSize: 18,
             fontWeight: "200",
             color: '#fff'
         },
         button: {
+            fontFamily: 'Montserrat-Bold',
             fontSize: 16,
             fontWeight: "600",
             padding: 2,
