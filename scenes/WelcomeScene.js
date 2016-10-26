@@ -49,6 +49,12 @@ const animatedProperties = {
   logo: {
     translateY: new Animated.Value(1000)
   }
+};
+
+const animationStyles = {
+  logo: {
+    transform: [{translateY: animatedProperties.logo.translateY}]
+  }
 }
 
 export default class WelcomeScene extends Component {
@@ -57,16 +63,9 @@ export default class WelcomeScene extends Component {
         super(props);
         this.state = {
           animatedProperties,
-          anim: {
-            logo: {
-              transform: [{
-                translateY: animatedProperties.logo.translateY
-              }]
-            }
-          }
+          animationStyles
         };
 
-        this._onPress = this._onPress.bind(this);
         this.popInLogo = this.popInLogo.bind(this);
     }
 
@@ -82,15 +81,10 @@ export default class WelcomeScene extends Component {
       });
     }
 
-    _onPress() {
-        // Animate the update
-        LayoutAnimation.spring();
-    }
-
     render() {
         return (
             <View style={[styles.rootView, styles.flexOne, GlobalStyles.layout.root]}>
-                <Animated.Image source={logo} style={[styles.logo, styles.flexOne, this.state.anim.logo]}/>
+                <Animated.Image source={logo} style={[styles.logo, styles.flexOne, this.state.animationStyles.logo]}/>
                 <View style={[styles.alignCenter, styles.flexOne]}>
                     <Text style={[GlobalStyles.text.hero, styles.alignCenter]}>
                         Umbrella
@@ -103,7 +97,7 @@ export default class WelcomeScene extends Component {
                         <Button
                             text="Let's Go"
                             style={styles.button}
-                            onPress={this._onPress}
+                            onPress={this.props.onContinue.bind(this)}
                             />
                         <View style={styles.flexOne}/>
                     </View>
