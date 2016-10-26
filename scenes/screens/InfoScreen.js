@@ -7,9 +7,9 @@ import {
     View,
     Text
 } from 'react-native';
-import Button from './Button';
+import Button from '../components/Button';
 
-import GlobalStyles from './../../resources/styles/global';
+import GlobalStyles from '../../resources/styles/global';
 
 const styles = StyleSheet.create({
     flexOne: {

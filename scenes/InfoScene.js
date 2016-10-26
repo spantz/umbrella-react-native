@@ -11,7 +11,7 @@ import {
     Image
 } from 'react-native';
 import GlobalStyles from './../resources/styles/global';
-import InfoScreen from './components/InfoScreen';
+import InfoScreen from './screens/InfoScreen';
 
 const styles = StyleSheet.create({
     flex: {
