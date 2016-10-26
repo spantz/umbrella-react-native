@@ -5,7 +5,9 @@ import React, {Component} from 'react';
 import {
     View,
     Text,
+    Animated,
     LayoutAnimation,
+    Easing,
     StyleSheet,
     TouchableOpacity,
     Image
@@ -43,31 +45,52 @@ const styles = StyleSheet.create({
     }
 });
 
+const animatedProperties = {
+  logo: {
+    translateY: new Animated.Value(1000)
+  }
+}
+
 export default class WelcomeScene extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { w: 10, h: 10};
+        this.state = {
+          animatedProperties,
+          anim: {
+            logo: {
+              transform: [{
+                translateY: animatedProperties.logo.translateY
+              }]
+            }
+          }
+        };
 
         this._onPress = this._onPress.bind(this);
-    } 
+        this.popInLogo = this.popInLogo.bind(this);
+    }
 
-    componentWillReceiveProps() {
-        // Animate creation
-        LayoutAnimation.spring();
-        this.setState({w: 100, h: 100})
+    componentDidMount() {
+      this.popInLogo().start();
+    }
+
+    popInLogo() {
+      return Animated.spring(this.state.animatedProperties.logo.translateY, {
+        toValue: 0,
+        duration: 200,
+        easing: Easing.linear,
+      });
     }
 
     _onPress() {
         // Animate the update
         LayoutAnimation.spring();
-        this.setState({w: this.state.w + 25, h: this.state.h + 25})
     }
 
     render() {
         return (
             <View style={[styles.rootView, styles.flexOne, GlobalStyles.layout.root]}>
-                <Image source={logo} style={[styles.logo, styles.flexOne, { width: this.state.w, height: this.state.h}]}/>
+                <Animated.Image source={logo} style={[styles.logo, styles.flexOne, this.state.anim.logo]}/>
                 <View style={[styles.alignCenter, styles.flexOne]}>
                     <Text style={[GlobalStyles.text.hero, styles.alignCenter]}>
                         Umbrella
@@ -80,7 +103,7 @@ export default class WelcomeScene extends Component {
                         <Button
                             text="Let's Go"
                             style={styles.button}
-                            onPress={this._onPress.bind(this)}
+                            onPress={this._onPress}
                             />
                         <View style={styles.flexOne}/>
                     </View>
