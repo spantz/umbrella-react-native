@@ -46,14 +46,30 @@ const styles = StyleSheet.create({
 });
 
 const animatedProperties = {
+  textView: {
+    translateY: new Animated.Value(100),
+    opacity: new Animated.Value(0),
+  },
   logo: {
     translateY: new Animated.Value(1000)
+  },
+  letsGoButton: {
+    opacity: new Animated.Value(0)
   }
 };
+
+console.log(animatedProperties);
 
 const animationStyles = {
   logo: {
     transform: [{translateY: animatedProperties.logo.translateY}]
+  },
+  heroAndSubhero: {
+    opacity: animatedProperties.textView.opacity,
+    transform: [{translateY: animatedProperties.textView.translateY}]
+  },
+  letsGoButton: {
+    opacity: animatedProperties.letsGoButton.opacity
   }
 }
 
@@ -66,33 +82,65 @@ export default class WelcomeScene extends Component {
           animationStyles
         };
 
-        this.popInLogo = this.popInLogo.bind(this);
+        this.animateLogoIn = this.animateLogoIn.bind(this);
+        this.animateHeroAndSubheroIn = this.animateHeroAndSubheroIn.bind(this);
+        this.animatedLetsGoButtonIn = this.animatedLetsGoButtonIn.bind(this);
+        this.onLoadAnimation = this.onLoadAnimation.bind(this)
     }
 
+
+    // React Component Lifecycle
     componentDidMount() {
-      this.popInLogo().start();
+      this.onLoadAnimation().start();
     }
 
-    popInLogo() {
+    //Animations
+    animateLogoIn() {
       return Animated.spring(this.state.animatedProperties.logo.translateY, {
         toValue: 0,
-        duration: 200,
-        easing: Easing.linear,
+        duration: 200
       });
+    }
+
+    animateHeroAndSubheroIn() {
+      return Animated.parallel([
+          Animated.spring(this.state.animatedProperties.textView.translateY, { toValue: 0, duration: 200 }),
+          Animated.spring(this.state.animatedProperties.textView.opacity, { toValue: 1, duration: 200 })
+        ])
+    }
+
+    animatedLetsGoButtonIn() {
+      return Animated.spring(this.state.animatedProperties.letsGoButton.opacity, {
+        toValue: 1,
+        duration: 200
+      });
+    }
+
+
+    onLoadAnimation() {
+      return Animated.sequence([ // One after the other
+        Animated.delay(400),
+        this.animateLogoIn(),
+        Animated.delay(200),
+        this.animateHeroAndSubheroIn(),
+        this.animatedLetsGoButtonIn()
+      ]);
     }
 
     render() {
         return (
             <View style={[styles.rootView, styles.flexOne, GlobalStyles.layout.root]}>
-                <Animated.Image source={logo} style={[styles.logo, styles.flexOne, this.state.animationStyles.logo]}/>
-                <View style={[styles.alignCenter, styles.flexOne]}>
-                    <Text style={[GlobalStyles.text.hero, styles.alignCenter]}>
-                        Umbrella
-                    </Text>
-                    <Text style={GlobalStyles.text.subHero}>
-                        Your daily resource for mental health.
-                    </Text>
-                    <View style={[styles.flexOne, styles.buttonContainer]}>
+                <Animated.Image className="logo" source={logo} style={[styles.logo, styles.flexOne, this.state.animationStyles.logo]}/>
+                <Animated.View style={[styles.alignCenter, styles.flexOne, this.state.animationStyles.heroAndSubhero]}>
+                    <View className="textView" style={[styles.alignCenter]}>
+                      <Text style={[GlobalStyles.text.hero]}>
+                          Umbrella
+                      </Text>
+                      <Text style={GlobalStyles.text.subHero}>
+                          Your daily resource for mental health.
+                      </Text>
+                    </View>
+                    <Animated.View style={[styles.flexOne, styles.buttonContainer, this.state.animationStyles.letsGoButton]}>
                         <View style={styles.flexOne}/>
                         <Button
                             text="Let's Go"
@@ -100,8 +148,8 @@ export default class WelcomeScene extends Component {
                             onPress={this.props.onContinue.bind(this)}
                             />
                         <View style={styles.flexOne}/>
-                    </View>
-                </View>
+                    </Animated.View>
+                </Animated.View>
             </View>
         );
     }
