@@ -1,0 +1,8 @@
+{
+    "preset": "idiomatic",
+    "validateQuoteMarks": "'",
+    "requireSpacesInsideParentheses": false,
+    "disallowSpacesInsideParentheses": true,
+    "disallowMultipleVarDecl": true,
+    "requireLineFeedAtFileEnd": false
+}
