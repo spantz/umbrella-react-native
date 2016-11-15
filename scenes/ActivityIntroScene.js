@@ -15,7 +15,7 @@ import GlobalStyles from "./../resources/styles/global";
 
 const CARD_MARGIN = 40;
 const CARD_WIDTH = Dimensions.get("window").width - CARD_MARGIN  * 2;
-const CARD_HEIGHT = CARD_WIDTH * 1.5;
+const CARD_HEIGHT = CARD_WIDTH * 1.4;
 
 const styles = StyleSheet.create({
     activity: {
@@ -24,12 +24,13 @@ const styles = StyleSheet.create({
         flex: 1,
         width: CARD_WIDTH,
         height: CARD_HEIGHT,
-        shadowColor: "#444",
-        shadowOpacity: .5,
-        shadowRadius: 10,
-        borderRadius: 5
+        shadowColor: "#555",
+        shadowOpacity: .3,
+        shadowRadius: 5,
+        borderRadius: 8
     },
     text: {
+        margin: 5,
         color: "purple"
     }
 });
