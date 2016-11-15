@@ -1,15 +1,15 @@
-'use strict';
+"use strict";
 
-import React, {Component} from 'react';
+import React, {Component} from "react";
 import {
     AppRegistry,
     StyleSheet,
     Text,
     View,
     Navigator
-} from 'react-native';
+} from "react-native";
 
-import WelcomeScene from './scenes/WelcomeScene';
+import WelcomeScene from "./scenes/WelcomeScene";
 
 export default class umbrellaReactNative extends Component {
     render() {
@@ -17,4 +17,4 @@ export default class umbrellaReactNative extends Component {
     }
 }
 
-AppRegistry.registerComponent('umbrellaReactNative', () => umbrellaReactNative);
+AppRegistry.registerComponent("umbrellaReactNative", () => umbrellaReactNative);

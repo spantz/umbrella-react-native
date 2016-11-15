@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 // @flow
 
-import React, {Component} from 'react';
+import React, {Component} from "react";
 import {
     View,
     Text,
@@ -11,30 +11,30 @@ import {
     StyleSheet,
     TouchableOpacity,
     Image
-} from 'react-native';
+} from "react-native";
 
-import GlobalStyles from './../resources/styles/global';
+import GlobalStyles from "./../resources/styles/global";
 
-import Button from './components/Button';
+import Button from "./components/Button";
 
-const logo = require('../resources/img/logo.png');
+const logo = require("../resources/img/logo.png");
 
 const styles = StyleSheet.create({
     logo: {
         margin: 20,
         width: null,
         height: null,
-        resizeMode: 'contain'
+        resizeMode: "contain"
     },
     rootView: {
-        alignItems: 'stretch'
+        alignItems: "stretch"
     },
     alignCenter: {
-        alignItems: 'center'
+        alignItems: "center"
     },
     buttonContainer: {
-        flexDirection: 'row',
-        alignItems: 'flex-end'
+        flexDirection: "row",
+        alignItems: "flex-end"
     },
     button: {
         marginBottom: 50,
@@ -125,10 +125,10 @@ export default class WelcomeScene extends Component {
     render() {
         return (
             <View style={[ styles.rootView, styles.flexOne, GlobalStyles.layout.root ]}>
-                <Animated.Image className='logo' source={logo}
+                <Animated.Image className="logo" source={logo}
                                 style={[ styles.logo, styles.flexOne, this.state.animationStyles.logo ]}/>
                 <Animated.View style={[ styles.alignCenter, styles.flexOne, this.state.animationStyles.heroAndSubHero ]}>
-                    <View className='textView' style={[ styles.alignCenter ]}>
+                    <View className="textView" style={[ styles.alignCenter ]}>
                         <Text style={[ GlobalStyles.text.hero ]}>
                             Umbrella
                         </Text>
@@ -140,7 +140,7 @@ export default class WelcomeScene extends Component {
                         style={[ styles.flexOne, styles.buttonContainer, this.state.animationStyles.letsGoButton ]}>
                         <View style={styles.flexOne}/>
                         <Button
-                            text='Let\'s Go'
+                            text="Let's Go"
                             style={styles.button}
                             onPress={this.props.onContinue.bind(this)}
                         />

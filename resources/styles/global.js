@@ -1,12 +1,12 @@
-'use strict';
+"use strict";
 // @flow
 
-import {StyleSheet} from 'react-native';
+import {StyleSheet} from "react-native";
 
 export default {
     colors: StyleSheet.create({
         screen: {
-            backgroundColor: '#2E8DD6'
+            backgroundColor: "#2E8DD6"
         }
     }),
     font: StyleSheet.create({
@@ -14,23 +14,23 @@ export default {
     }),
     text: StyleSheet.create({
         hero: {
-            fontFamily: 'Montserrat-Bold',
+            fontFamily: "Montserrat-Bold",
             fontSize: 28,
-            fontWeight: 'bold',
-            color: '#fff'
+            fontWeight: "bold",
+            color: "#fff"
         },
         subHero: {
-            fontFamily: 'Montserrat-Bold',
+            fontFamily: "Montserrat-Bold",
             fontSize: 18,
-            fontWeight: '200',
-            color: '#fff'
+            fontWeight: "200",
+            color: "#fff"
         },
         button: {
-            fontFamily: 'Montserrat-Bold',
+            fontFamily: "Montserrat-Bold",
             fontSize: 16,
-            fontWeight: '600',
+            fontWeight: "600",
             padding: 2,
-            color: '#2E8DD6'
+            color: "#2E8DD6"
         }
     }),
     layout: {

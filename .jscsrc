@@ -1,6 +1,6 @@
 {
     "preset": "idiomatic",
-    "validateQuoteMarks": "'",
+    "validateQuoteMarks": "\"",
     "requireSpacesInsideParentheses": false,
     "disallowSpacesInsideParentheses": true,
     "disallowMultipleVarDecl": true,

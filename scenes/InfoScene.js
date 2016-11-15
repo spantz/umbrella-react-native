@@ -1,22 +1,22 @@
-'use strict';
+"use strict";
 // @flow
 
-import React from 'react';
-import Swiper from 'react-native-swiper';
+import React from "react";
+import Swiper from "react-native-swiper";
 import {
     View,
     Text,
     StyleSheet,
     TouchableOpacity,
     Image
-} from 'react-native';
-import GlobalStyles from './../resources/styles/global';
-import InfoScreen from './screens/InfoScreen';
+} from "react-native";
+import GlobalStyles from "./../resources/styles/global";
+import InfoScreen from "./screens/InfoScreen";
 
 const styles = StyleSheet.create({
     flex: {
         flex: 1,
-        alignItems: 'center'
+        alignItems: "center"
     }
 });
 
