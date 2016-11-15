@@ -8,7 +8,8 @@ import {
     Text,
     ScrollView,
     StyleSheet,
-    Dimensions
+    Dimensions,
+    Image
 } from "react-native";
 
 import GlobalStyles from "./../resources/styles/global";
@@ -17,21 +18,36 @@ const CARD_MARGIN = 40;
 const CARD_WIDTH = Dimensions.get("window").width - CARD_MARGIN  * 2;
 const CARD_HEIGHT = CARD_WIDTH * 1.4;
 
+const breatheScreenshot = require("./../resources/img/breathe-screenshot.png");
+const moodScreenshot = require("./../resources/img/mood-screenshot.png");
+
 const styles = StyleSheet.create({
     activity: {
         backgroundColor: "#fff",
         margin: CARD_MARGIN,
-        flex: 1,
         width: CARD_WIDTH,
         height: CARD_HEIGHT,
         shadowColor: "#555",
         shadowOpacity: .3,
         shadowRadius: 5,
-        borderRadius: 8
+        borderRadius: 8,
+        padding: 5,
+        justifyContent: "center"
     },
-    text: {
-        margin: 5,
-        color: "purple"
+    hero: {
+        textAlign: "center",
+        color: "#000"
+    },
+    subHero: {
+        textAlign: "center",
+        color: "#888",
+        fontSize: 14
+    },
+    image: {
+        alignSelf: "stretch",
+        flex: 1,
+        width: null,
+        height: null
     }
 });
 
@@ -49,13 +65,14 @@ export default class ActivityIntroScene extends React.Component {
                     showsHorizontalScrollIndicator={false}
                     >
                     <View style={styles.activity}>
-                        <Text style={[GlobalStyles.text.hero, styles.text]}>Activity One</Text>
+                        <Image source={breatheScreenshot} resizeMode={"contain"} style={styles.image}/>
                     </View>
                     <View style={styles.activity}>
-                        <Text style={[GlobalStyles.text.hero, styles.text]}>Activity Two</Text>
+                        <Image source={moodScreenshot} style={styles.image}/>
                     </View>
                     <View style={styles.activity}>
-                        <Text style={[GlobalStyles.text.hero, styles.text]}>Activity Three</Text>
+                        <Text style={[GlobalStyles.text.hero, styles.hero]}>More Coming Soon</Text>
+                        <Text style={[styles.subHero]}>Early 2017</Text>
                     </View>
 
                 </ScrollView>
