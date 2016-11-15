@@ -12,6 +12,7 @@ import {
 } from "react-native";
 import GlobalStyles from "./../resources/styles/global";
 import InfoScreen from "./screens/InfoScreen";
+import ActivityIntroScene from "./ActivityIntroScene";
 
 const styles = StyleSheet.create({
     flex: {
@@ -28,6 +29,7 @@ export default class InfoScene extends React.Component {
 
         this.goForward = this.goForward.bind(this);
         this.onSwiperMount = this.onSwiperMount.bind(this);
+        this.goToActivityIntro = this.goToActivityIntro.bind(this);
     }
 
     goForward() {
@@ -36,6 +38,14 @@ export default class InfoScene extends React.Component {
 
     onSwiperMount(swiper: Swiper) {
         this.swiper = swiper;
+    }
+
+    goToActivityIntro() {
+        this.props.navigator.push({
+            index: 1,
+            component: ActivityIntroScene,
+            reset: true
+        });
     }
 
     render() {
@@ -56,6 +66,7 @@ export default class InfoScene extends React.Component {
                     hero="Use us every day to build a brighter future."
                     subHero="Check in with us to view long-term goals, progress, and work towards a happier you."
                     buttonText="Show Me How"
+                    onPress={this.goToActivityIntro}
                     />
             </Swiper>
         );
