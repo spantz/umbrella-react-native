@@ -4,5 +4,9 @@
     "requireSpacesInsideParentheses": false,
     "disallowSpacesInsideParentheses": true,
     "disallowMultipleVarDecl": true,
-    "requireLineFeedAtFileEnd": false
+    "requireLineFeedAtFileEnd": false,
+    "disallowSpacesInsideBrackets": true,
+    "requireSpacesInsideBrackets": false,
+    "maximumLineLength": null,
+    "maximumNumberOfLines": null
 }

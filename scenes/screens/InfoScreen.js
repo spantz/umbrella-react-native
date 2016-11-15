@@ -30,7 +30,7 @@ export default class InfoScreen extends React.Component {
         let buttonJsx = null;
         if (typeof this.props.buttonText !== "undefined") {
             buttonJsx = (
-                <View style={[ styles.flexOne, styles.buttonContainer ]}>
+                <View style={[styles.flexOne, styles.buttonContainer]}>
                     <View style={styles.flexOne}/>
                     <Button style={styles.button} text={this.props.buttonText} onPress={this.props.onPress}/>
                     <View style={styles.flexOne}/>
@@ -49,7 +49,7 @@ export default class InfoScreen extends React.Component {
 
         return (
             <View style={this.props.style}>
-                <Text style={[ GlobalStyles.text.hero ]}>
+                <Text style={[GlobalStyles.text.hero]}>
                     {this.props.hero}
                 </Text>
                 {subHeroJsx}

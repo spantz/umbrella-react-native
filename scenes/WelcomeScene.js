@@ -60,11 +60,11 @@ const animatedProperties = {
 
 const animationStyles = {
     logo: {
-        transform: [ { translateY: animatedProperties.logo.translateY } ]
+        transform: [{ translateY: animatedProperties.logo.translateY }]
     },
     heroAndSubHero: {
         opacity: animatedProperties.textView.opacity,
-        transform: [ { translateY: animatedProperties.textView.translateY } ]
+        transform: [{ translateY: animatedProperties.textView.translateY }]
     },
     letsGoButton: {
         opacity: animatedProperties.letsGoButton.opacity
@@ -124,12 +124,12 @@ export default class WelcomeScene extends Component {
 
     render() {
         return (
-            <View style={[ styles.rootView, styles.flexOne, GlobalStyles.layout.root ]}>
+            <View style={[styles.rootView, styles.flexOne, GlobalStyles.layout.root]}>
                 <Animated.Image className="logo" source={logo}
-                                style={[ styles.logo, styles.flexOne, this.state.animationStyles.logo ]}/>
-                <Animated.View style={[ styles.alignCenter, styles.flexOne, this.state.animationStyles.heroAndSubHero ]}>
-                    <View className="textView" style={[ styles.alignCenter ]}>
-                        <Text style={[ GlobalStyles.text.hero ]}>
+                                style={[styles.logo, styles.flexOne, this.state.animationStyles.logo]}/>
+                <Animated.View style={[styles.alignCenter, styles.flexOne, this.state.animationStyles.heroAndSubHero]}>
+                    <View className="textView" style={[styles.alignCenter]}>
+                        <Text style={[GlobalStyles.text.hero]}>
                             Umbrella
                         </Text>
                         <Text style={GlobalStyles.text.subHero}>
@@ -137,7 +137,7 @@ export default class WelcomeScene extends Component {
                         </Text>
                     </View>
                     <Animated.View
-                        style={[ styles.flexOne, styles.buttonContainer, this.state.animationStyles.letsGoButton ]}>
+                        style={[styles.flexOne, styles.buttonContainer, this.state.animationStyles.letsGoButton]}>
                         <View style={styles.flexOne}/>
                         <Button
                             text="Let's Go"

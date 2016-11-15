@@ -30,8 +30,8 @@ const styles = StyleSheet.create({
 export default class Button extends Component {
     render() {
         return (
-            <TouchableOpacity style={[ this.props.style, styles.button ]} onPress={this.props.onPress}>
-                <Text style={[ GlobalStyles.text.button, styles.buttonText ]}>
+            <TouchableOpacity style={[this.props.style, styles.button]} onPress={this.props.onPress}>
+                <Text style={[GlobalStyles.text.button, styles.buttonText]}>
                     {this.props.text}
                 </Text>
             </TouchableOpacity>

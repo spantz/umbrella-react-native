@@ -34,9 +34,9 @@ export default class IntroFlowScene extends React.Component {
 
         return (
             <Navigator
-                style={[ GlobalStyles.colors.screen ]}
+                style={[GlobalStyles.colors.screen]}
 
-                initialRouteStack={[ initialRoute ]}
+                initialRouteStack={[initialRoute]}
 
                 ref="navigator"
 
@@ -55,7 +55,7 @@ export default class IntroFlowScene extends React.Component {
                 onDidFocus={(route) => {
                     if (route.reset) {
                         route.reset = false;
-                        this.refs.navigator.immediatelyResetRouteStack([ route ]);
+                        this.refs.navigator.immediatelyResetRouteStack([route]);
                     }
                 }}
 
