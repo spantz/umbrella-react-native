@@ -9,7 +9,7 @@ import {
     StyleSheet
 } from "react-native";
 
-import GlobalStyles from "./../../resources/styles/global";
+import GlobalStyles from "../../resources/styles/global";
 
 const styles = StyleSheet.create({
     button: {
