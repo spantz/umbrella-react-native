@@ -8,5 +8,15 @@
     "disallowSpacesInsideBrackets": true,
     "requireSpacesInsideBrackets": false,
     "maximumLineLength": null,
-    "maximumNumberOfLines": null
+    "maximumNumberOfLines": null,
+    "disallowSpacesInAnonymousFunctionExpression": false,
+    "disallowSpacesInFunctionExpression": false,
+    "requireSpacesInAnonymousFunctionExpression": {
+        "beforeOpeningRoundBrace": true,
+        "beforeOpeningCurlyBrace": true
+    },
+    "requireSpacesInFunctionExpression": {
+        "beforeOpeningRoundBrace": true,
+        "beforeOpeningCurlyBrace": true
+    }
 }
