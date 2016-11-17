@@ -33,9 +33,9 @@ export default {
             color: "#2E8DD6"
         }
     }),
-    layout: {
+    layout: StyleSheet.create({
         root: {
             marginTop: 20
         }
-    }
+    })
 };
