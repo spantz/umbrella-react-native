@@ -12,7 +12,7 @@ import {
     Image
 } from "react-native";
 
-import GlobalStyles from "../../src/resources/styles/global";
+import GlobalStyles from "../../resources/styles/global";
 
 const CARD_MARGIN = 40;
 const CARD_WIDTH = Dimensions.get("window").width - CARD_MARGIN  * 2;
