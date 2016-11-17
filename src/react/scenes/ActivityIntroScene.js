@@ -12,14 +12,14 @@ import {
     Image
 } from "react-native";
 
-import GlobalStyles from "../../resources/styles/global";
+import GlobalStyles from "../../src/resources/styles/global";
 
 const CARD_MARGIN = 40;
 const CARD_WIDTH = Dimensions.get("window").width - CARD_MARGIN  * 2;
 const CARD_HEIGHT = CARD_WIDTH * 1.4;
 
-const breatheScreenshot = require("./../../resources/img/breathe-screenshot.png");
-const moodScreenshot = require("./../../resources/img/mood-screenshot.png");
+const breatheScreenshot = require("./.././img/breathe-screenshot.png");
+const moodScreenshot = require("./.././img/mood-screenshot.png");
 
 const styles = StyleSheet.create({
     activity: {

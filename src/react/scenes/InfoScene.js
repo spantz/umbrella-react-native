@@ -10,7 +10,7 @@ import {
     TouchableOpacity,
     Image
 } from "react-native";
-import GlobalStyles from "../../resources/styles/global";
+import GlobalStyles from "../../src/resources/styles/global";
 import InfoScreen from "../screens/InfoScreen";
 import ActivityIntroScene from "./ActivityIntroScene";
 
