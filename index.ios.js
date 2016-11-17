@@ -9,7 +9,7 @@ import {
     Navigator
 } from "react-native";
 
-import IntroFlowScene from "./src/react/flows/IntroFlow";
+import IntroFlow from "./src/react/flows/IntroFlow";
 
 export default class Umbrella extends Component {
     render() {
