@@ -13,11 +13,11 @@ import {
     Image
 } from "react-native";
 
-import GlobalStyles from "./../resources/styles/global";
+import GlobalStyles from "../../resources/styles/global";
 
-import Button from "./components/Button";
+import Button from "../components/Button";
 
-const logo = require("../resources/img/logo.png");
+const logo = require("../../resources/img/logo.png");
 
 const styles = StyleSheet.create({
     logo: {

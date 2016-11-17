@@ -3,10 +3,10 @@
 
 import React from "react";
 import {Navigator} from "react-native";
-import WelcomeScene from "./WelcomeScene";
-import InfoScene from "./InfoScene";
+import WelcomeScene from "../scenes/WelcomeScene";
+import InfoScene from "../scenes/InfoScene";
 
-import GlobalStyles from "./../resources/styles/global";
+import GlobalStyles from "../../resources/styles/global";
 
 const noSwipe = {
     ...Navigator.SceneConfigs.HorizontalSwipeJump,
@@ -15,7 +15,7 @@ const noSwipe = {
     }
 };
 
-export default class IntroFlowScene extends React.Component {
+export default class IntroFlow extends React.Component {
     render() {
         const initialRoute = {
             index: 0,
