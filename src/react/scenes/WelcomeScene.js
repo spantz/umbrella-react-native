@@ -13,7 +13,7 @@ import {
     Image
 } from "react-native";
 
-import GlobalStyles from "../../src/resources/styles/global";
+import GlobalStyles from "../../resources/styles/global";
 
 import Button from "../components/Button";
 
