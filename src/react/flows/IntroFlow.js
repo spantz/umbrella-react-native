@@ -21,7 +21,7 @@ export default class IntroFlow extends React.Component {
             index: 0,
             component: WelcomeScene,
             passProps: {
-                onContinue: function() {
+                onContinue: function () {
                     this.props.navigator.push({
                         index: 1,
                         component: InfoScene,
