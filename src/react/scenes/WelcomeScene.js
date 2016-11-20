@@ -81,7 +81,7 @@ export default class WelcomeScene extends Component {
         };
 
         this.animateLogoIn = this.animateLogoIn.bind(this);
-        this.animateHeroAndSubheroIn = this.animateHeroAndSubheroIn.bind(this);
+        this.animateHeroAndSubHeroIn = this.animateHeroAndSubHeroIn.bind(this);
         this.animatedLetsGoButtonIn = this.animatedLetsGoButtonIn.bind(this);
         this.onLoadAnimation = this.onLoadAnimation.bind(this);
     }
@@ -99,7 +99,7 @@ export default class WelcomeScene extends Component {
         return Animated.spring(this.state.animatedProperties.logo.translateY, { toValue: 0 });
     }
 
-    animateHeroAndSubheroIn() {
+    animateHeroAndSubHeroIn() {
         return Animated.stagger(200, [
             Animated.spring(this.state.animatedProperties.textView.translateY, { toValue: 0 }),
             Animated.spring(this.state.animatedProperties.textView.opacity, { toValue: 1 })
@@ -115,7 +115,7 @@ export default class WelcomeScene extends Component {
         return Animated.sequence([
             Animated.stagger(100, [
                 this.animateLogoIn(),
-                this.animateHeroAndSubheroIn()
+                this.animateHeroAndSubHeroIn()
             ]),
             Animated.delay(1000),
             this.animatedLetsGoButtonIn()
