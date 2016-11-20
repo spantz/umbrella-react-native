@@ -28,6 +28,11 @@ const styles = StyleSheet.create({
 });
 
 export default class Button extends Component {
+    static propTypes = {
+        onPress: React.PropTypes.func.isRequired,
+        text: React.PropTypes.string.isRequired
+    };
+
     render() {
         return (
             <TouchableOpacity style={[this.props.style, styles.button]} onPress={this.props.onPress} disabled={this.props.disabled}>
