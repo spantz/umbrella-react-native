@@ -77,7 +77,8 @@ export default class WelcomeScene extends Component {
         super(props);
         this.state = {
             animatedProperties,
-            animationStyles
+            animationStyles,
+            buttonDisabled: true
         };
 
         this.animateLogoIn = this.animateLogoIn.bind(this);
@@ -90,7 +91,13 @@ export default class WelcomeScene extends Component {
     // React Component Lifecycle
 
     componentDidMount() {
-        this.onLoadAnimation().start();
+        let self = this;
+        self.onLoadAnimation()
+            .start(function () {
+                self.setState({
+                    buttonDisabled: false
+                });
+            });
     }
 
     // Animations
@@ -143,6 +150,7 @@ export default class WelcomeScene extends Component {
                             text="Let's Go"
                             style={styles.button}
                             onPress={this.props.onContinue.bind(this)}
+                            disabled={this.state.buttonDisabled}
                         />
                         <View style={styles.flexOne}/>
                     </Animated.View>
