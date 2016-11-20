@@ -10,14 +10,18 @@ import {
     TouchableOpacity,
     Animated,
     LayoutAnimation,
-    Image
+    Image,
+    ScrollView
 } from "react-native";
 import GlobalStyles from "../../resources/styles/global";
 import InfoScreen from "../screens/InfoScreen";
-import ActivityIntroScene from "./ActivityIntroScene";
+import ActivityHomeScene from "./ActivityHomeScene";
+import Card from "../components/Card";
 
 const sun = require("../../resources/img/Questionaire/Sun.png");
 const hill = require("../../resources/img/Questionaire/Hill.png");
+const breatheScreenshot = require("../../resources/img/breathe-screenshot.png");
+const moodScreenshot = require("../../resources/img/mood-screenshot.png");
 
 const animation = {
     sun: {
@@ -46,6 +50,21 @@ const styles = StyleSheet.create({
         top: 398,
         width: 750/2,
         height: 538/2
+    },
+    image: {
+        alignSelf: "stretch",
+        flex: 1,
+        width: null,
+        height: null
+    },
+    cardHero: {
+        textAlign: "center",
+        color: "#000"
+    },
+    cardSubHero: {
+        textAlign: "center",
+        color: "#888",
+        fontSize: 14
     }
 });
 
@@ -72,7 +91,7 @@ export default class InfoScene extends React.Component {
     goToActivityIntro() {
         this.props.navigator.push({
             index: 1,
-            component: ActivityIntroScene,
+            component: ActivityHomeScene,
             reset: true
         });
     }
@@ -96,21 +115,38 @@ export default class InfoScene extends React.Component {
         return (
             <Swiper showsPagination={true} loop={false} ref={this.onSwiperMount} style={[GlobalStyles.layout.root]}>
                 <View style={[styles.flex]}>
-                 <Animated.Image source={sun} style={[styles.sun, animation.sun]}/>
+                    <Animated.Image source={sun} style={[styles.sun, animation.sun]}/>
                     <Animated.Image source={hill} style={[styles.hill]}/>
                     <InfoScreen style={[styles.flex]}
-                    hero="Use us in the moment when you're having a bad day."
-                    subHero="We'll help you relax and calm down when you're struggling."
-                    onPress={this.goForward}
-                    buttonText="Great"
-                    />
+                        hero="Use us in the moment when you're having a bad day."
+                        subHero="We'll help you relax and calm down when you're struggling."
+                        onPress={this.goForward}
+                        buttonText="Great"
+                        />
                 </View>
-                <InfoScreen style={styles.flex}
-                    hero="Use us in the moment when you're having a bad day."
-                    subHero="We'll help you relax and calm down when you're struggling."
+                <InfoScreen
+                    hero="We've got lots of activities to help you out."
                     onPress={this.goForward}
-                    buttonText="Great"
-                    />
+                    buttonText="Continue"
+                    style={styles.flex}
+                    >
+                    <ScrollView
+                        directionalLockEnabled={true}
+                        horizontal={true}
+                        pagingEnabled={true}
+                        showsHorizontalScrollIndicator={false} >
+                        <Card>
+                            <Image source={breatheScreenshot} resizeMode={"contain"} style={styles.image}/>
+                        </Card>
+                        <Card>
+                            <Image source={moodScreenshot} style={styles.image}/>
+                        </Card>
+                        <Card>
+                            <Text style={[GlobalStyles.text.hero, styles.cardHero]}>More Coming Soon</Text>
+                            <Text style={[styles.subHero]}>Early 2017</Text>
+                        </Card>
+                    </ScrollView>
+                </InfoScreen>
                 <InfoScreen style={styles.flex}
                     hero="Use us every day to build a brighter future."
                     subHero="Check in with us to view long-term goals, progress, and work towards a happier you."
