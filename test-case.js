@@ -5,3 +5,9 @@ beforeAll(() => {
         throw new Error(message);
     };
 });
+
+export default class TestCase {
+    static getRenderedProps(component) {
+        return component._component._instance.props.props;
+    }
+}
