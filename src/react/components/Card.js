@@ -10,7 +10,7 @@ import Scale from "../../scale";
 
 const CARD_MARGIN = 40;
 const CARD_WIDTH = Scale.WINDOW_WIDTH - CARD_MARGIN  * 2;
-const CARD_HEIGHT = CARD_WIDTH * 1.4;
+const CARD_HEIGHT = CARD_WIDTH * 1.2;
 
 const styles = StyleSheet.create({
     card: {
@@ -23,7 +23,8 @@ const styles = StyleSheet.create({
         shadowRadius: 5,
         borderRadius: 8,
         padding: 5,
-        justifyContent: "center"
+        justifyContent: "center",
+        alignItems: "center"
     }
 });
 

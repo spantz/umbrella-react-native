@@ -53,6 +53,9 @@ export default class InfoScreen extends React.Component {
                     {this.props.hero}
                 </Text>
                 {subHeroJsx}
+                <View>
+                    {this.props.children}
+                </View>
                 {buttonJsx}
             </View>
         );
