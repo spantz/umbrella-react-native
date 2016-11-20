@@ -46,7 +46,7 @@ export default class ActivityIntroScrollerScreen extends React.Component {
                     horizontal={true}
                     pagingEnabled={true}
                     showsHorizontalScrollIndicator={false}
-                >
+                    >
                     <Card>
                         <Image source={breatheScreenshot} resizeMode={"contain"} style={styles.image}/>
                     </Card>

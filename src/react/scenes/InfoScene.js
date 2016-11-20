@@ -14,7 +14,8 @@ import {
 } from "react-native";
 import GlobalStyles from "../../resources/styles/global";
 import InfoScreen from "../screens/InfoScreen";
-import ActivityIntroScene from "./ActivityIntroScene";
+import ActivityHomeScene from "./ActivityHomeScene";
+import ActivityIntroScrollerScreen from "../screens/ActivityIntroScrollerScreen";
 
 const sun = require("../../resources/img/Questionaire/Sun.png");
 const hill = require("../../resources/img/Questionaire/Hill.png");
@@ -72,7 +73,7 @@ export default class InfoScene extends React.Component {
     goToActivityIntro() {
         this.props.navigator.push({
             index: 1,
-            component: ActivityIntroScene,
+            component: ActivityHomeScene,
             reset: true
         });
     }
@@ -105,12 +106,7 @@ export default class InfoScene extends React.Component {
                     buttonText="Great"
                     />
                 </View>
-                <InfoScreen style={styles.flex}
-                    hero="Use us in the moment when you're having a bad day."
-                    subHero="We'll help you relax and calm down when you're struggling."
-                    onPress={this.goForward}
-                    buttonText="Great"
-                    />
+                <ActivityIntroScrollerScreen style={styles.flex}/>
                 <InfoScreen style={styles.flex}
                     hero="Use us every day to build a brighter future."
                     subHero="Check in with us to view long-term goals, progress, and work towards a happier you."
