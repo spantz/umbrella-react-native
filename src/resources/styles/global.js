@@ -2,11 +2,12 @@
 // @flow
 
 import {StyleSheet} from "react-native";
+import Colors from "./colors";
 
 export default {
     colors: StyleSheet.create({
         screen: {
-            backgroundColor: "#2E8DD6"
+            backgroundColor: Colors.background
         }
     }),
     font: StyleSheet.create({
@@ -17,20 +18,20 @@ export default {
             fontFamily: "Montserrat-Bold",
             fontSize: 28,
             fontWeight: "bold",
-            color: "#fff"
+            color: Colors.white
         },
         subHero: {
             fontFamily: "Montserrat-Bold",
             fontSize: 18,
             fontWeight: "200",
-            color: "#fff"
+            color: Colors.white
         },
         button: {
             fontFamily: "Montserrat-Bold",
             fontSize: 16,
             fontWeight: "600",
             padding: 2,
-            color: "#2E8DD6"
+            color: Colors.background
         }
     }),
     layout: StyleSheet.create({
