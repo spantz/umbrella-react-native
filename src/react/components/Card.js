@@ -13,7 +13,7 @@ const CARD_FULL_WIDTH = Scale.WINDOW_WIDTH - CARD_FULL_MARGIN * 2;
 const CARD_HALF_MARGIN = 20;
 const CARD_HALF_WIDTH = Scale.WIDTH_50_PERCENT - CARD_HALF_MARGIN * 2;
 
-const heightWidthRatio = 1.2;
+const heightWidthRatio = 1.4;
 
 const styles = StyleSheet.create({
     card: {
