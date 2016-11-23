@@ -6,11 +6,17 @@ import {
     View,
     Text,
     StyleSheet,
-    TouchableOpacity
+    TouchableOpacity,
+    ScrollView,
+    Image
 } from "react-native";
 import GlobalStyles from "../../resources/styles/global";
 import Scale from "../../scale";
 import Colors from "../../resources/styles/colors";
+import Card from "../components/Card";
+
+const moodThumb = require("../../resources/img/activities/mood-thumb.png");
+const breatheThumb = require("../../resources/img/activities/mood-breathe.png");
 
 const scaleHalf = Scale.WIDTH_50_PERCENT;
 const borderRadius = scaleHalf / 2;
@@ -80,6 +86,23 @@ const styles = StyleSheet.create({
     },
     buttonTextActive: {
         color: Colors.white
+    },
+    cardFlexer: {
+        flexDirection: "row"
+    },
+    card: {
+        flex: -1,
+        margin: 10
+    },
+    cardHero: {
+        color: Colors.black,
+        flex: 1
+    },
+    cardImage: {
+        flex: 3,
+        alignSelf: "stretch",
+        width: null,
+        height: null
     }
 });
 
@@ -115,6 +138,50 @@ export default class ActivityHomeScene extends React.Component {
                             </Text>
                         </TouchableOpacity>
                     </View>
+                    <ScrollView style={styles.cardScroller}>
+                        <View style={styles.cardFlexer}>
+                            <Card size={Card.CARD_SIZE_HALF} style={styles.card}>
+                                <Text style={[GlobalStyles.text.hero, styles.cardHero]}>
+                                    Mood
+                                </Text>
+                                <Image source={moodThumb} resizeMode={"contain"} style={styles.cardImage}/>
+                            </Card>
+                            <Card size={Card.CARD_SIZE_HALF} style={styles.card}>
+                                <Text style={[GlobalStyles.text.hero, styles.cardHero]}>
+                                    Breathe
+                                </Text>
+                                <Image source={breatheThumb} resizeMode={"contain"} style={styles.cardImage}/>
+                            </Card>
+                        </View>
+                        <View style={styles.cardFlexer}>
+                            <Card size={Card.CARD_SIZE_HALF} style={styles.card}>
+                                <Text style={[GlobalStyles.text.hero, styles.cardHero]}>
+                                    Mood 2
+                                </Text>
+                                <Image source={moodThumb} resizeMode={"contain"} style={styles.cardImage}/>
+                            </Card>
+                            <Card size={Card.CARD_SIZE_HALF} style={styles.card}>
+                                <Text style={[GlobalStyles.text.hero, styles.cardHero]}>
+                                    Breathe 2
+                                </Text>
+                                <Image source={breatheThumb} resizeMode={"contain"} style={styles.cardImage}/>
+                            </Card>
+                        </View>
+                        <View style={styles.cardFlexer}>
+                            <Card size={Card.CARD_SIZE_HALF} style={styles.card}>
+                                <Text style={[GlobalStyles.text.hero, styles.cardHero]}>
+                                    Mood 3
+                                </Text>
+                                <Image source={moodThumb} resizeMode={"contain"} style={styles.cardImage}/>
+                            </Card>
+                            <Card size={Card.CARD_SIZE_HALF} style={styles.card}>
+                                <Text style={[GlobalStyles.text.hero, styles.cardHero]}>
+                                    Breathe 3
+                                </Text>
+                                <Image source={breatheThumb} resizeMode={"contain"} style={styles.cardImage}/>
+                            </Card>
+                        </View>
+                    </ScrollView>
                 </View>
             </View>
         );
