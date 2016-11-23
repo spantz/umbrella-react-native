@@ -53,6 +53,18 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         alignSelf: "center"
     },
+    checkBoxContainer: {
+        marginTop: 10,
+        flexDirection: "row",
+        justifyContent: "center"
+    },
+    checkBox: {
+        backgroundColor: Colors.white,
+        width: 25,
+        height: 25,
+        marginLeft: 3,
+        marginRight: 3
+    },
     contentContainer: {
         marginLeft: 20,
         marginRight: 20,
@@ -118,6 +130,15 @@ export default class ActivityHomeScene extends React.Component {
                         <Text style={styles.score}>
                             240
                         </Text>
+                        <View style={styles.checkBoxContainer}>
+                            <View style={styles.checkBox}/>
+                            <View style={styles.checkBox}/>
+                            <View style={styles.checkBox}/>
+                            <View style={styles.checkBox}/>
+                            <View style={styles.checkBox}/>
+                            <View style={styles.checkBox}/>
+                            <View style={styles.checkBox}/>
+                        </View>
                     </View>
                 </View>
                 <View style={styles.contentContainer}>
