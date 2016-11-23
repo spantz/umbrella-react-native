@@ -22,7 +22,8 @@ const scaleHalf = Scale.WIDTH_50_PERCENT;
 const borderRadius = scaleHalf / 2;
 const styles = StyleSheet.create({
     root: {
-        backgroundColor: "#fff"
+        backgroundColor: "#fff",
+        flex: 1
     },
     topSection: {
         borderBottomRightRadius: borderRadius,
@@ -54,7 +55,8 @@ const styles = StyleSheet.create({
     },
     contentContainer: {
         marginLeft: 20,
-        marginRight: 20
+        marginRight: 20,
+        flex: 1
     },
     hero: {
         color: Colors.black,
@@ -62,7 +64,8 @@ const styles = StyleSheet.create({
     },
     filterContainer: {
         marginTop: 10,
-        flexDirection: "row"
+        flexDirection: "row",
+        marginBottom: 20
     },
     button: {
         borderColor: Colors.background,
@@ -109,7 +112,7 @@ const styles = StyleSheet.create({
 export default class ActivityHomeScene extends React.Component {
     render() {
         return (
-            <View style={[GlobalStyles.layout.root, styles.background]}>
+            <View style={[GlobalStyles.layout.root, styles.root]}>
                 <View style={[GlobalStyles.colors.screen, styles.topSection]}>
                     <View style={[styles.topSectionInView]}>
                         <Text style={styles.score}>
@@ -138,7 +141,7 @@ export default class ActivityHomeScene extends React.Component {
                             </Text>
                         </TouchableOpacity>
                     </View>
-                    <ScrollView style={styles.cardScroller}>
+                    <ScrollView pagingEnabled={false}>
                         <View style={styles.cardFlexer}>
                             <Card size={Card.CARD_SIZE_HALF} style={styles.card}>
                                 <Text style={[GlobalStyles.text.hero, styles.cardHero]}>
