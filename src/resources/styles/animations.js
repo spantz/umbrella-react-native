@@ -19,7 +19,8 @@ class AnimationFactory {
             this.triggers.push(this.createAnimationTrigger(key, end));
         };
 
-        this.all = Animated.parallel(this.triggers);
+        this.parallel = Animated.parallel(this.triggers);
+        this.sequence = Animated.sequence(this.triggers);
     }
 
     createAnimationTrigger(key, value) {
