@@ -18,6 +18,7 @@ import InfoScreen from "../screens/InfoScreen";
 import ActivityHomeScene from "./ActivityHomeScene";
 import Card from "../components/Card";
 
+
 import { sun, hill } from "../../resources/images";
 
 const breatheScreenshot = require("../../resources/img/breathe-screenshot.png");

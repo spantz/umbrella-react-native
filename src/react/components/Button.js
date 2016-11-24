@@ -9,7 +9,6 @@ import {
     StyleSheet
 } from "react-native";
 
-// import GlobalStyles from "../../resources/styles/global";
 import {Buttons} from "../../resources/styles";
 
 export default class Button extends Component {

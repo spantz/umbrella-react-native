@@ -15,7 +15,9 @@ export default {
             borderRadius: 8,
             overflow: "hidden",
             shadowColor: "#FFFFFF",
-            shadowRadius: 9
+            shadowRadius: 9,
+            marginTop: 10,
+            marginBottom: 10
         },
         text: StyleSheet.flatten([
             base,
