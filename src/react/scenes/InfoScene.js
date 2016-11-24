@@ -18,8 +18,8 @@ import InfoScreen from "../screens/InfoScreen";
 import ActivityHomeScene from "./ActivityHomeScene";
 import Card from "../components/Card";
 
-const sun = require("../../resources/img/Questionaire/Sun.png");
-const hill = require("../../resources/img/Questionaire/Hill.png");
+import { sun, hill } from "../../resources/images";
+
 const breatheScreenshot = require("../../resources/img/breathe-screenshot.png");
 const moodScreenshot = require("../../resources/img/mood-screenshot.png");
 

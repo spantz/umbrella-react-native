@@ -14,8 +14,7 @@ import {
 import IntroFlow from "./src/react/flows/IntroFlow";
 import * as Styles from "./src/resources/styles";
 
-const background = require("./src/resources/img/background.png");
-
+import { background } from "./src/resources/images";
 
 export default class Umbrella extends Component {
     render() {

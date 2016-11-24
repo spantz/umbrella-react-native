@@ -14,9 +14,10 @@ import {
 } from "react-native";
 
 import * as Styles from "../../resources/styles";
+import { logo } from "../../resources/images";
 import Button from "../components/Button";
 
-const logo = require("../../resources/img/logo.png");
+
 
 export default class WelcomeScene extends Component {
 
