@@ -6,14 +6,25 @@ import {
     StyleSheet,
     Text,
     View,
-    Navigator
+    StatusBar,
+    Navigator,
+    Image
 } from "react-native";
 
 import IntroFlow from "./src/react/flows/IntroFlow";
+import * as Styles from "./src/resources/styles";
+
+const background = require("./src/resources/img/background.png");
+
 
 export default class Umbrella extends Component {
     render() {
-        return <IntroFlow/>;
+        return (
+            <Image style={Styles.Global.Image.background} source={background}>
+                <StatusBar barStyle="light-content"/>
+                <IntroFlow/>
+            </Image>
+        );
     }
 }
 

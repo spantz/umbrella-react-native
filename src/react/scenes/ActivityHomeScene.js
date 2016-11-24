@@ -7,22 +7,8 @@ import {
     Text,
     StyleSheet
 } from "react-native";
-import GlobalStyles from "../../resources/styles/global";
-import Button from "../components/Button";
 
-const styles = StyleSheet.create({
-    buttonContainer: {
-        flexDirection: "row",
-        alignItems: "flex-end"
-    },
-    flexOne: {
-        flex: 1
-    },
-    button: {
-        marginBottom: 50,
-        flex: 6
-    }
-});
+import Button from "../components/Button";
 
 export default class ActivityHomeScene extends React.Component {
     constructor(props) {
@@ -36,29 +22,29 @@ export default class ActivityHomeScene extends React.Component {
 
     render() {
         return (
-            <View style={GlobalStyles.layout.root}>
-                <Text style={GlobalStyles.text.hero}>
+            <View style={[]}>
+                <Text style={[]}>
                     Activities
                 </Text>
-                <Text style={GlobalStyles.text.subHero}>
+                <Text style={[]}>
                     Select an activity.
                 </Text>
                 <View>
-                    <View style={styles.buttonContainer}>
-                        <View style={styles.flexOne}/>
+                    <View style={[]}>
+                        <View style={[]}/>
                         <Button
                             text="Breathe"
                             onPress={this.onPress}
                             style={styles.button}/>
-                        <View style={styles.flexOne}/>
+                        <View style={[]}/>
                     </View>
-                    <View style={styles.buttonContainer}>
-                        <View style={styles.flexOne}/>
+                    <View style={[]}>
+                        <View style={[]}/>
                         <Button
                             text="Mood Journal"
                             onPress={this.onPress}
                             style={styles.button}/>
-                        <View style={styles.flexOne}/>
+                        <View style={[]}/>
                     </View>
                 </View>
             </View>

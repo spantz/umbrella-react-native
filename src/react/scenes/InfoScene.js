@@ -13,7 +13,7 @@ import {
     Image,
     ScrollView
 } from "react-native";
-import GlobalStyles from "../../resources/styles/global";
+
 import InfoScreen from "../screens/InfoScreen";
 import ActivityHomeScene from "./ActivityHomeScene";
 import Card from "../components/Card";
@@ -113,7 +113,7 @@ export default class InfoScene extends React.Component {
     render() {
 
         return (
-            <Swiper showsPagination={true} loop={false} ref={this.onSwiperMount} style={[GlobalStyles.layout.root]}>
+            <Swiper showsPagination={true} loop={false} ref={this.onSwiperMount} style={[]}>
                 <View style={[styles.flex]}>
                     <Animated.Image source={sun} style={[styles.sun, animation.sun]}/>
                     <Animated.Image source={hill} style={[styles.hill]}/>
@@ -136,18 +136,18 @@ export default class InfoScene extends React.Component {
                         pagingEnabled={true}
                         showsHorizontalScrollIndicator={false} >
                         <Card>
-                            <Image source={breatheScreenshot} resizeMode={"contain"} style={styles.image}/>
+                            <Image source={breatheScreenshot} resizeMode={"contain"} style={[]}/>
                         </Card>
                         <Card>
                             <Image source={moodScreenshot} style={styles.image}/>
                         </Card>
                         <Card>
-                            <Text style={[GlobalStyles.text.hero, styles.cardHero]}>More Coming Soon</Text>
-                            <Text style={[styles.subHero]}>Early 2017</Text>
+                            <Text style={[]}>More Coming Soon</Text>
+                            <Text style={[]}>Early 2017</Text>
                         </Card>
                     </ScrollView>
                 </InfoScreen>
-                <InfoScreen style={styles.flex}
+                <InfoScreen style={[]}
                     hero="Use us every day to build a brighter future."
                     subHero="Check in with us to view long-term goals, progress, and work towards a happier you."
                     buttonText="Show Me How"

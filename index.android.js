@@ -10,10 +10,17 @@ import {
 } from "react-native";
 
 import IntroFlow from "./src/react/flows/IntroFlow";
+import * as Styles from "../../resources/styles";
+
+const background = require("./src/resources/img/background.png");
 
 export default class umbrellaReactNative extends Component {
     render() {
-        return <IntroFlow/>;
+        return (
+            <Image style={[Styles.Global.Image.background]} source={background}>
+                <IntroFlow/>
+            </Image>
+        );
     }
 }
 
