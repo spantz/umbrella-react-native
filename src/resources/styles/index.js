@@ -5,31 +5,40 @@ import {
     StyleSheet
 } from "react-native";
 
-export default {
+import Typography from "./typography.js";
+import Buttons from "./buttons.js";
+import Utilities from "./utilities.js";
+
+const Global = {
     Image: StyleSheet.create({
         background: {
-            flex: 1
+            resizeMode: "contain"
+        },
+        logo: {
+            resizeMode: "contain",
+            alignSelf: "center",
+            marginTop: 90,
+            marginBottom: 35
         }
     }),
     View: StyleSheet.create({
         body: {
-            margin: 20,
-            zIndex: 1
-            // backgroundColor: "#44B4EF"
+            flexDirection: "column",
+            padding: 30,
+            flex: 1
         },
-        background: {
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            zIndex: -1
+        column: {
+            flexDirection: "column"
+        },
+         row: {
+            flexDirection: "row"
         }
     }),
     Text: StyleSheet.create({
-        base: {
-            fontFamily: "Montserrat-Bold",
-            color: "#FFF"
-        }
     })
-}
+};
+
+export {Global};
+export {Typography};
+export {Buttons};
+export {Utilities};
