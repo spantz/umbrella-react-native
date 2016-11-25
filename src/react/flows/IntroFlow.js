@@ -5,7 +5,7 @@ import React from "react";
 import {Navigator} from "react-native";
 import WelcomeScene from "../scenes/WelcomeScene";
 import InfoScene from "../scenes/InfoScene";
-
+import {Global} from "../../resources/styles"
 
 const noSwipe = {
     ...Navigator.SceneConfigs.HorizontalSwipeJump,

@@ -21,8 +21,6 @@ class AnimationFactory {
 
         this.parallel = Animated.parallel(this.triggers);
         this.sequence = Animated.sequence(this.triggers);
-
-        console.log(this);
     }
 
     createAnimationTrigger(key, value) {

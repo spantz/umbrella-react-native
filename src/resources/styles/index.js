@@ -27,14 +27,29 @@ const Global = {
             padding: 30,
             flex: 1
         },
-        column: {
-            flexDirection: "column"
-        },
-         row: {
-            flexDirection: "row"
+        container: {
+            padding: 20,
+            flex: 1
         }
     }),
     Text: StyleSheet.create({
+
+    }),
+    Grid: StyleSheet.create({
+        column: {
+            flexDirection: "column",
+            flex: 1
+        },
+        row: {
+            flexDirection: "row",
+            flex: 1
+        },
+        justifyCenter: {
+            justifyContent: "center"
+        },
+        justifyEnd: {
+            justifyContent: "flex-end"
+        }
     })
 };
 

@@ -7,9 +7,7 @@ import {
     View,
     Text
 } from "react-native";
-import Button from "../components/Button";
-
-
+import { Button, Hero } from "../components";
 
 export default class InfoScreen extends React.Component {
     render() {
@@ -18,7 +16,6 @@ export default class InfoScreen extends React.Component {
             buttonJsx = (
                 <View style={[]}>
                     <View style={[]}/>
-                    <Button style={[]} text={this.props.buttonText} onPress={this.props.onPress}/>
                     <View style={[]}/>
                 </View>
             );
@@ -35,9 +32,9 @@ export default class InfoScreen extends React.Component {
 
         return (
             <View style={[]}>
-                <Text style={[]}>
+                <Hero style={[]}>
                     {this.props.hero}
-                </Text>
+                </Hero>
                 {subHeroJsx}
                 <View>
                     {this.props.children}

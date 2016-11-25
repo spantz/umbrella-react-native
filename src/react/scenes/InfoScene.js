@@ -13,50 +13,29 @@ import {
     Image,
     ScrollView
 } from "react-native";
+import AnimationFactory from "../../resources/factories/animations";
+import { Global } from "../../resources/styles";
+import { sun, hill, cards } from "../../resources/images";
 
 import InfoScreen from "../screens/InfoScreen";
 import ActivityHomeScene from "./ActivityHomeScene";
-import Card from "../components/Card";
+
+import { Card, Button, Hero } from "../components";
 
 
-import { sun, hill } from "../../resources/images";
-
-const breatheScreenshot = require("../../resources/img/breathe-screenshot.png");
-const moodScreenshot = require("../../resources/img/mood-screenshot.png");
-
-const animation = {
-    sun: {
-        top: new Animated.Value(400),
-        left: new Animated.Value(-200),
-    },
-    hill: {
-        opacity: new Animated.Value(0),
-    }
-};
+const animations = {
+    sun: new AnimationFactory({ top: [400, 300], left: [-200, 105] }),
+    hill: new AnimationFactory({ opacity: [0, 1] })
+}
 
 const styles = StyleSheet.create({
-    flex: {
-        flex: 1,
-        alignItems: "center"
-    },
     sun: {
         position: "absolute",
-        width: 157,
-        height: 157,
-
-    },
+    },  
     hill: {
         position: "absolute",
         right: 0,
-        top: 398,
-        width: 750/2,
-        height: 538/2
-    },
-    image: {
-        alignSelf: "stretch",
-        flex: 1,
-        width: null,
-        height: null
+        bottom: 0
     },
     cardHero: {
         textAlign: "center",
@@ -75,7 +54,6 @@ export default class InfoScene extends React.Component {
     constructor(props) {
         super(props);
 
-        this.animateInSun = this.animateInSun.bind(this);
         this.goForward = this.goForward.bind(this);
         this.onSwiperMount = this.onSwiperMount.bind(this);
         this.goToActivityIntro = this.goToActivityIntro.bind(this);
@@ -97,63 +75,53 @@ export default class InfoScene extends React.Component {
         });
     }
 
-    animateInSun() {
-        return Animated.sequence([
-            Animated.delay(1000),
-            Animated.parallel([
-                Animated.spring(animation.sun.top, { toValue: 298 }),
-                Animated.spring(animation.sun.left, { toValue: 106 })
-            ])
-        ]);
-    }
-
-    componentDidMount() {
-        this.animateInSun().start();
+     componentDidMount() {
+        Animated.sequence([         
+            animations.hill.sequence,
+            animations.sun.parallel          
+        ]).start();
     }
 
     render() {
 
         return (
-            <Swiper showsPagination={true} loop={false} ref={this.onSwiperMount} style={[]}>
-                <View style={[styles.flex]}>
-                    <Animated.Image source={sun} style={[styles.sun, animation.sun]}/>
-                    <Animated.Image source={hill} style={[styles.hill]}/>
-                    <InfoScreen style={[styles.flex]}
-                        hero="Use us in the moment when you're having a bad day."
-                        subHero="We'll help you relax and calm down when you're struggling."
-                        onPress={this.goForward}
-                        buttonText="Great"
-                        />
+            <Swiper showsPagination={false} loop={false} ref={this.onSwiperMount}>
+                <View style={[Global.Grid.column]}>
+                    <Animated.Image source={sun} style={[styles.sun, animations.sun.styles]}/>
+                    <Animated.Image source={hill} style={[styles.hill, animations.hill.styles]}/>
+                    <Hero style={{ marginTop: 30 }}>
+                        Umbrella is here to help you reduce your anxiety, feel better about yourself, and have a brighter day.
+                    </Hero>
+                    
+                    <View style={[Global.View.container, Global.Grid.justifyEnd, { marginBottom: 10, flex: 1 }]}>
+                        <Button text="Sounds Cool" style={[]} onPress={this.goForward} />
+                    </View>
                 </View>
-                <InfoScreen
-                    hero="We've got lots of activities to help you out."
-                    onPress={this.goForward}
-                    buttonText="Continue"
-                    style={styles.flex}
-                    >
-                    <ScrollView
+                <View style={[Global.Grid.column]}>
+                    <Hero style={{ marginTop: 30, paddingBottom: 0, marginBottom: 0 }}>
+                        We've got lots of activities to help you out.
+                    </Hero>
+                    <View>
+                        <ScrollView
                         directionalLockEnabled={true}
                         horizontal={true}
                         pagingEnabled={true}
-                        showsHorizontalScrollIndicator={false} >
+                        showsHorizontalScrollIndicator={false}>
                         <Card>
-                            <Image source={breatheScreenshot} resizeMode={"contain"} style={[]}/>
+                            <Image source={cards.breathe}/>
                         </Card>
                         <Card>
-                            <Image source={moodScreenshot} style={styles.image}/>
+                            <Image source={cards.mood}/>
                         </Card>
                         <Card>
-                            <Text style={[]}>More Coming Soon</Text>
-                            <Text style={[]}>Early 2017</Text>
+                            <Image source={cards.blank}/>                            
                         </Card>
                     </ScrollView>
-                </InfoScreen>
-                <InfoScreen style={[]}
-                    hero="Use us every day to build a brighter future."
-                    subHero="Check in with us to view long-term goals, progress, and work towards a happier you."
-                    buttonText="Show Me How"
-                    onPress={this.goToActivityIntro}
-                    />
+                    </View>
+                    <View style={[Global.View.container, Global.Grid.justifyEnd, { marginBottom: 10 }]}>
+                        <Button text="Awesome, let's get started" onPress={this.goToActivityIntro} />
+                    </View>
+                </View>
             </Swiper>
         );
     }

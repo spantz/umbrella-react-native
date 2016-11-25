@@ -26,7 +26,8 @@ export default {
                 padding: 20,
                 backgroundColor: "#FFFFFF",
                 color: "#2E8DD6",
-                textAlign: "center"
+                textAlign: "center",
+                flex: 1
             }
         ])
     })

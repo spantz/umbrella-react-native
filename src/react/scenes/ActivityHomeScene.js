@@ -8,7 +8,8 @@ import {
     StyleSheet
 } from "react-native";
 
-import Button from "../components/Button";
+import { Global } from "../../resources/styles";
+import { Button, Hero } from "../components";
 
 export default class ActivityHomeScene extends React.Component {
     constructor(props) {
@@ -22,30 +23,11 @@ export default class ActivityHomeScene extends React.Component {
 
     render() {
         return (
-            <View style={[]}>
-                <Text style={[]}>
-                    Activities
-                </Text>
-                <Text style={[]}>
-                    Select an activity.
-                </Text>
-                <View>
-                    <View style={[]}>
-                        <View style={[]}/>
-                        <Button
-                            text="Breathe"
-                            onPress={this.onPress}
-                            style={styles.button}/>
-                        <View style={[]}/>
-                    </View>
-                    <View style={[]}>
-                        <View style={[]}/>
-                        <Button
-                            text="Mood Journal"
-                            onPress={this.onPress}
-                            style={styles.button}/>
-                        <View style={[]}/>
-                    </View>
+            <View style={[Global.View.body]}>
+                <Hero>Activities</Hero>
+                <View style={[Global.Grid.column]}>
+                    <Button text="Breathe" onPress={this.onPress}/>
+                    <Button text="Mood Journal" onPress={this.onPress}/>
                 </View>
             </View>
         );
