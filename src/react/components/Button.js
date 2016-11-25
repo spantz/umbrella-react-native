@@ -9,7 +9,7 @@ import {
     StyleSheet
 } from "react-native";
 
-import {Buttons} from "../../resources/styles";
+import { Buttons } from "../../resources/styles";
 
 export default class Button extends Component {
     render() {
@@ -21,4 +21,4 @@ export default class Button extends Component {
             </TouchableOpacity>
         );
     }
-}
+};
