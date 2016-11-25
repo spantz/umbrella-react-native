@@ -9,7 +9,7 @@ const base = {
     fontFamily: "Montserrat",
     color: "#FFF",
     textAlign: "center",
-    padding: 10,
+    padding: 10
 };
 
 export {base};

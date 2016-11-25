@@ -16,5 +16,5 @@ export default class Hero extends Component {
                 {this.props.children}
             </Text>
         );
-    }
-}
+    };
+};

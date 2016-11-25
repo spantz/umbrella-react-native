@@ -3,7 +3,7 @@ const background = require("./background.png");
 const hill = require("./hill.png");
 const sun = require("./sun.png");
 
-//Cards
+// Cards
 const cards = {
     blank: require("./blank-card.png"),
     breathe: require("./breathe.png"),
