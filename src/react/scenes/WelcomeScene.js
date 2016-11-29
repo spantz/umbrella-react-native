@@ -15,7 +15,7 @@ import {
 
 import { Button, Hero, Subhero } from "../components";
 import AnimationFactory from "../../resources/factories/animations";
-import { Typography, Global }from "../../resources/styles";
+import { Global } from "../../resources/styles";
 import { logo } from "../../resources/images";
 
 
@@ -34,7 +34,6 @@ export default class WelcomeScene extends Component {
         };
     }
 
-    // React Component Lifecycle
     componentDidMount() {
         Animated.sequence([
             Animated.delay(1000),
