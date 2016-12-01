@@ -24,7 +24,7 @@ class AnimationFactory {
     constructor(properties) {
         this.keys = Object.keys(properties);
         this.styles = {};
-        this.triggers = [];
+        this._triggers = [];
 
         this.keys.forEach((key) => {
             const start = properties[key][0] || 0;
@@ -33,8 +33,20 @@ class AnimationFactory {
             this.triggers.push(this.createAnimationTrigger(key, end));
         });
 
-        this.parallel = Animated.parallel(this.triggers);
-        this.sequence = Animated.sequence(this.triggers);
+        this._parallel = Animated.parallel(this.triggers);
+        this._sequence = Animated.sequence(this.triggers);
+    }
+
+    getParallel() {
+        return this._parallel;
+    }
+
+    getSequence() {
+        return this._sequence;
+    }
+
+    getTriggers() {
+        return this._triggers;
     }
 
     createAnimationTrigger(key, value) {
