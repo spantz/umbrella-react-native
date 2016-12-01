@@ -4,6 +4,22 @@ import {
 } from "react-native";
 
 
+
+
+/**
+ * AnimationFactory makes it easy to specify a StyleSheet-compatable
+ * property along with a start and end value. It creates animations 
+ * and exposes triggers, which are animations of those properties.
+ * Example:
+ * 
+ * let fadeIn = new AnimationFactory({opacity: [0,1]});
+ * 
+ * function triggerFadeIn (){
+ *   fadeIn.parallel.start();
+ * }
+ * 
+ * @class AnimationFactory
+ */
 class AnimationFactory {
     constructor(properties) {
         this.keys = Object.keys(properties);
