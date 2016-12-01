@@ -10,14 +10,12 @@ class AnimationFactory {
         this.styles = {};
         this.triggers = [];
 
-        for (let i = 0, j =  this.keys.length; i < j; i++) {
-            const key = this.keys[i];
+        this.keys.forEach((key) => {
             const start = properties[key][0] || 0;
             const end = properties[key][1] || 0;
-
             Object.assign(this.styles, this.createStartStyleForProperty(key, start));
             this.triggers.push(this.createAnimationTrigger(key, end));
-        };
+        });
 
         this.parallel = Animated.parallel(this.triggers);
         this.sequence = Animated.sequence(this.triggers);
