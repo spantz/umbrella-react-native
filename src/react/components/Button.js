@@ -9,32 +9,16 @@ import {
     StyleSheet
 } from "react-native";
 
-import GlobalStyles from "../../resources/styles/global";
-
-const styles = StyleSheet.create({
-    button: {
-        alignItems: "center",
-        justifyContent: "center",
-        height: 50,
-        backgroundColor: "#fff",
-        borderWidth: 1,
-        borderColor: "#2E8DD6",
-        borderRadius: 10
-    },
-    buttonText: {
-        alignSelf: "stretch",
-        textAlign: "center"
-    }
-});
+import { Buttons } from "../../resources/styles";
 
 export default class Button extends Component {
     render() {
         return (
-            <TouchableOpacity style={[this.props.style, styles.button]} onPress={this.props.onPress} disabled={this.props.disabled}>
-                <Text style={[GlobalStyles.text.button, styles.buttonText]}>
+            <TouchableOpacity style={[Buttons.primary.view, this.props.style]} onPress={this.props.onPress} disabled={this.props.disabled}>
+                <Text style={[Buttons.primary.text, this.props.style]}>
                     {this.props.text}
                 </Text>
             </TouchableOpacity>
         );
     }
-}
+};
