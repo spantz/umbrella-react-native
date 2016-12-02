@@ -10,9 +10,8 @@ import {
     ScrollView,
     Image
 } from "react-native";
-import { Global } from "../../resources/styles/";
+import { Global, Colors } from "../../resources/styles/";
 import Scale from "../../scale";
-import Colors from "../../resources/styles/colors";
 import Card from "../components/Card";
 
 import Hero from "../components/Hero";
