@@ -10,10 +10,12 @@ import {
     ScrollView,
     Image
 } from "react-native";
-import GlobalStyles from "../../resources/styles/global";
+import { Global } from "../../resources/styles/";
 import Scale from "../../scale";
 import Colors from "../../resources/styles/colors";
 import Card from "../components/Card";
+
+import Hero from "../components/Hero";
 
 const moodThumb = require("../../resources/img/activities/mood-thumb.png");
 const breatheThumb = require("../../resources/img/activities/mood-breathe.png");
@@ -22,8 +24,7 @@ const scaleHalf = Scale.WIDTH_50_PERCENT;
 const borderRadius = scaleHalf / 2;
 const styles = StyleSheet.create({
     root: {
-        backgroundColor: "#fff",
-        flex: 1
+        backgroundColor: "#fff"
     },
     topSection: {
         borderBottomRightRadius: borderRadius,
@@ -36,7 +37,8 @@ const styles = StyleSheet.create({
                 scaleX: 3.5
             }
         ],
-        alignItems: "center"
+        alignItems: "center",
+        backgroundColor: "#2E8DD6",
     },
     topSectionInView: {
         width: Scale.WINDOW_WIDTH,
@@ -66,13 +68,12 @@ const styles = StyleSheet.create({
         marginRight: 3
     },
     contentContainer: {
-        marginLeft: 20,
-        marginRight: 20,
         flex: 1
     },
     hero: {
         color: Colors.black,
-        marginTop: 20
+        marginTop: 20,
+        textAlign: "left"
     },
     filterContainer: {
         marginTop: 10,
@@ -111,7 +112,8 @@ const styles = StyleSheet.create({
     },
     cardHero: {
         color: Colors.black,
-        flex: 1
+        flex: 1,
+        fontSize: 28
     },
     cardImage: {
         flex: 3,
@@ -124,8 +126,8 @@ const styles = StyleSheet.create({
 export default class ActivityHomeScene extends React.Component {
     render() {
         return (
-            <View style={[GlobalStyles.layout.root, styles.root]}>
-                <View style={[GlobalStyles.colors.screen, styles.topSection]}>
+            <View style={[Global.View.body, styles.root]}>
+                <View style={[styles.topSection]}>
                     <View style={[styles.topSectionInView]}>
                         <Text style={styles.score}>
                             240
@@ -142,9 +144,9 @@ export default class ActivityHomeScene extends React.Component {
                     </View>
                 </View>
                 <View style={styles.contentContainer}>
-                    <Text style={[GlobalStyles.text.hero, styles.hero]}>
+                    <Hero style={styles.hero}>
                         Keep it up!
-                    </Text>
+                    </Hero>
                     <View style={styles.filterContainer}>
                         <TouchableOpacity style={[styles.button, styles.buttonActive]}>
                             <Text style={[styles.buttonText, styles.buttonTextActive]}>
@@ -165,43 +167,15 @@ export default class ActivityHomeScene extends React.Component {
                     <ScrollView pagingEnabled={false}>
                         <View style={styles.cardFlexer}>
                             <Card size={Card.CARD_SIZE_HALF} style={styles.card}>
-                                <Text style={[GlobalStyles.text.hero, styles.cardHero]}>
+                                <Hero style={styles.cardHero}>
                                     Mood
-                                </Text>
+                                </Hero>
                                 <Image source={moodThumb} resizeMode={"contain"} style={styles.cardImage}/>
                             </Card>
                             <Card size={Card.CARD_SIZE_HALF} style={styles.card}>
-                                <Text style={[GlobalStyles.text.hero, styles.cardHero]}>
+                                <Hero style={styles.cardHero}>
                                     Breathe
-                                </Text>
-                                <Image source={breatheThumb} resizeMode={"contain"} style={styles.cardImage}/>
-                            </Card>
-                        </View>
-                        <View style={styles.cardFlexer}>
-                            <Card size={Card.CARD_SIZE_HALF} style={styles.card}>
-                                <Text style={[GlobalStyles.text.hero, styles.cardHero]}>
-                                    Mood 2
-                                </Text>
-                                <Image source={moodThumb} resizeMode={"contain"} style={styles.cardImage}/>
-                            </Card>
-                            <Card size={Card.CARD_SIZE_HALF} style={styles.card}>
-                                <Text style={[GlobalStyles.text.hero, styles.cardHero]}>
-                                    Breathe 2
-                                </Text>
-                                <Image source={breatheThumb} resizeMode={"contain"} style={styles.cardImage}/>
-                            </Card>
-                        </View>
-                        <View style={styles.cardFlexer}>
-                            <Card size={Card.CARD_SIZE_HALF} style={styles.card}>
-                                <Text style={[GlobalStyles.text.hero, styles.cardHero]}>
-                                    Mood 3
-                                </Text>
-                                <Image source={moodThumb} resizeMode={"contain"} style={styles.cardImage}/>
-                            </Card>
-                            <Card size={Card.CARD_SIZE_HALF} style={styles.card}>
-                                <Text style={[GlobalStyles.text.hero, styles.cardHero]}>
-                                    Breathe 3
-                                </Text>
+                                </Hero>
                                 <Image source={breatheThumb} resizeMode={"contain"} style={styles.cardImage}/>
                             </Card>
                         </View>
