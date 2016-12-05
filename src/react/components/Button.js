@@ -12,6 +12,11 @@ import {
 import { Buttons } from "../../resources/styles";
 
 export default class Button extends Component {
+    static propTypes = {
+        onPress: React.PropTypes.func.isRequired,
+        text: React.PropTypes.string.isRequired
+    };
+
     render() {
         return (
             <TouchableOpacity style={[Buttons.primary.view, this.props.style]} onPress={this.props.onPress} disabled={this.props.disabled}>
