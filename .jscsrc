@@ -18,5 +18,6 @@
     "requireSpacesInFunctionExpression": {
         "beforeOpeningRoundBrace": true,
         "beforeOpeningCurlyBrace": true
-    }
+    },
+    "requireSemicolons": true
 }
