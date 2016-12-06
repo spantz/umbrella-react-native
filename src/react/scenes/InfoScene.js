@@ -72,8 +72,8 @@ export default class InfoScene extends React.Component {
 
      componentDidMount() {
         Animated.sequence([         
-            animations.hill.sequence,
-            animations.sun.parallel          
+            animations.hill.getSequence(),
+            animations.sun.getParallel()
         ]).start();
     }
 
@@ -87,8 +87,8 @@ export default class InfoScene extends React.Component {
                     buttonText="Sounds Cool"
                     onPress={this.goForward}
                     >
-                    <Animated.Image source={sun} style={[styles.sun, animations.sun.styles]}/>
-                    <Animated.Image source={hill} style={[styles.hill, animations.hill.styles]}/>
+                    <Animated.Image source={sun} style={[styles.sun, animations.sun.getStyles()]}/>
+                    <Animated.Image source={hill} style={[styles.hill, animations.hill.getStyles()]}/>
                 </InfoScreen>
                 <InfoScreen
                     heroStyle={styles.hero}

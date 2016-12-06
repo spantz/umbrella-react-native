@@ -37,10 +37,10 @@ export default class WelcomeScene extends Component {
     componentDidMount() {
         Animated.sequence([
             Animated.delay(1000),
-            animations.logo.parallel,
+            animations.logo.getParallel(),
             Animated.stagger(200, [
-                animations.text.parallel,
-                animations.button.parallel
+                animations.text.getParallel(),
+                animations.button.getParallel()
             ])
         ]).start(() => {
             this.setState({
@@ -52,12 +52,12 @@ export default class WelcomeScene extends Component {
     render() {
         return (
             <View style={Global.View.body}>
-                <Animated.Image className="logo" style={[Global.Image.logo, animations.logo.styles]} source={logo}/>
-                <Animated.View style={[animations.text.styles]}>
+                <Animated.Image className="logo" style={[Global.Image.logo, animations.logo.getStyles()]} source={logo}/>
+                <Animated.View style={[animations.text.getStyles()]}>
                     <Hero> Umbrella </Hero>
                     <Subhero> Your daily resource {"\n"} for mental health. </Subhero>
                 </Animated.View>
-                <Animated.View style={[Global.Grid.column, animations.button.styles, { justifyContent: "flex-end" }]}>
+                <Animated.View style={[Global.Grid.column, animations.button.getStyles(), { justifyContent: "flex-end" }]}>
                      <Button
                         text="Let's Go"
                         onPress={this.props.onContinue.bind(this)}

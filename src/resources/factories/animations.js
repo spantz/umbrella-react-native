@@ -20,18 +20,18 @@ import {
 class AnimationFactory {
     constructor(properties) {
         this.keys = Object.keys(properties);
-        this.styles = {};
+        this._styles = {};
         this._triggers = [];
 
         this.keys.forEach((key) => {
             const start = properties[key][0] || 0;
             const end = properties[key][1] || 0;
-            Object.assign(this.styles, this.createStartStyleForProperty(key, start));
-            this.triggers.push(this.createAnimationTrigger(key, end));
+            Object.assign(this._styles, this.createStartStyleForProperty(key, start));
+            this._triggers.push(this.createAnimationTrigger(key, end));
         });
 
-        this._parallel = Animated.parallel(this.triggers);
-        this._sequence = Animated.sequence(this.triggers);
+        this._parallel = Animated.parallel(this._triggers);
+        this._sequence = Animated.sequence(this._triggers);
     }
 
     getParallel() {
@@ -46,12 +46,16 @@ class AnimationFactory {
         return this._triggers;
     }
 
+    getStyles() {
+        return this._styles;
+    }
+
     createAnimationTrigger(key, value) {
-        return Animated.spring(this.styles[key], { toValue: value });
+        return Animated.spring(this._styles[key], { toValue: value });
     }
 
     createStartStyleForProperty(key, value) {
-        var startStyle = {};
+        let startStyle = {};
         startStyle[key] = new Animated.Value(value);
         return startStyle;
     }
