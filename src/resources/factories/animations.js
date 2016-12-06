@@ -24,10 +24,12 @@ class AnimationFactory {
         this._triggers = [];
 
         this.keys.forEach((key) => {
-            const start = properties[key][0] || 0;
-            const end = properties[key][1] || 0;
-            Object.assign(this._styles, this.createStartStyleForProperty(key, start));
-            this._triggers.push(this.createAnimationTrigger(key, end));
+            if (properties.hasOwnProperty(key)) {
+                const start = properties[key][0] || 0;
+                const end = properties[key][1] || 0;
+                Object.assign(this._styles, this.createStartStyleForProperty(key, start));
+                this._triggers.push(this.createAnimationTrigger(key, end));
+            }
         });
 
         this._parallel = Animated.parallel(this._triggers);
