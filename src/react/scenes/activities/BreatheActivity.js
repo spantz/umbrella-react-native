@@ -6,7 +6,8 @@ import {
     View,
     Text,
     StyleSheet,
-    Animated
+    Animated,
+    Easing
 } from "react-native";
 import {
     Hero,
@@ -44,6 +45,39 @@ const styles = StyleSheet.create({
 });
 
 export default class BreatheActivity extends React.Component {
+    constructor(props) {
+        super(props);
+        this.repeatAnimation = this.repeatAnimation.bind(this);
+        this.scale = new Animated.Value(1);
+    }
+
+    componentDidMount() {
+        this.repeatAnimation();
+    }
+
+    repeatAnimation() {
+        Animated.sequence([
+            Animated.timing(
+                this.scale,
+                {
+                    toValue: 2,
+                    duration: 1800,
+                    easing: Easing.ease
+                }
+            ),
+            Animated.delay(500),
+            Animated.timing(
+                this.scale,
+                {
+                    toValue: 1,
+                    duration: 1800,
+                    easing: Easing.ease
+                }
+            ),
+            Animated.delay(500)
+        ]).start(this.repeatAnimation);
+    }
+
     render() {
         return (
             <View style={[Global.View.body, styles.activity]}>
@@ -56,7 +90,9 @@ export default class BreatheActivity extends React.Component {
                     </Subhero>
                 </View>
                 <View style={styles.dropContainer}>
-                    <View style={styles.orb}></View>
+                    <Animated.View style={{ transform: [{ scale: this.scale }] }}>
+                        <View style={[styles.orb]}/>
+                    </Animated.View>
                 </View>
             </View>
         );
