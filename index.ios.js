@@ -16,13 +16,12 @@ import * as Styles from "./src/resources/styles";
 
 import { background } from "./src/resources/images";
 
+import BreatheActivity from "./src/react/scenes/activities/BreatheActivity";
+
 export default class Umbrella extends Component {
     render() {
         return (
-            <Image style={Styles.Global.Image.background} source={background}>
-                <StatusBar barStyle="light-content"/>
-                <IntroFlow/>
-            </Image>
+            <BreatheActivity/>
         );
     }
 }
