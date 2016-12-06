@@ -1,7 +1,7 @@
 "use strict";
 // @flow
 
-import React from "react";
+import React, { Component, PropTypes } from "react";
 import {
     View,
     StyleSheet
@@ -28,7 +28,11 @@ const styles = StyleSheet.create({
     }
 });
 
-export default class Card extends React.Component {
+export default class Card extends Component {
+    static propTypes = {
+        style: PropTypes.oneOfType([PropTypes.object, PropTypes.array, PropTypes.number])
+    };
+
     render() {
         return (
             <View style={[styles.card, this.props.style]}>

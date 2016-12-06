@@ -1,7 +1,7 @@
 "use strict";
 // @flow
 
-import React, {Component} from "react";
+import React, {Component, PropTypes} from "react";
 import {
     View,
     Text,
@@ -13,8 +13,9 @@ import { Buttons } from "../../resources/styles";
 
 export default class Button extends Component {
     static propTypes = {
-        onPress: React.PropTypes.func.isRequired,
-        text: React.PropTypes.string.isRequired
+        onPress: PropTypes.func.isRequired,
+        text: PropTypes.string.isRequired,
+        style: PropTypes.oneOfType([PropTypes.object, PropTypes.array, PropTypes.number]),
     };
 
     render() {
