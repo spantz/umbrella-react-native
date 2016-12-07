@@ -9,7 +9,7 @@ import {
 import Scale from "../../scale";
 
 const CARD_MARGIN = 40;
-const CARD_WIDTH = Scale.WINDOW_WIDTH - CARD_MARGIN  * 2;
+const CARD_WIDTH = Scale.WINDOW_WIDTH - CARD_MARGIN * 2;
 const CARD_HEIGHT = CARD_WIDTH * 1.15;
 
 const styles = StyleSheet.create({

@@ -1,5 +1,4 @@
 import {
-    StyleSheet,
     Animated
 } from "react-native";
 
@@ -53,7 +52,7 @@ class AnimationFactory {
     }
 
     createAnimationTrigger(key, value) {
-        return Animated.spring(this._styles[key], { toValue: value });
+        return Animated.spring(this._styles[key], {toValue: value});
     }
 
     createStartStyleForProperty(key, value) {
