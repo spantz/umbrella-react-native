@@ -1,7 +1,7 @@
 "use strict";
 // @flow
 
-import {Component} from "react";
+import {Component, PropTypes} from "react";
 import {
     Text
 } from "react-native";

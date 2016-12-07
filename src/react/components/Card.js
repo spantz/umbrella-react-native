@@ -1,7 +1,7 @@
 "use strict";
 // @flow
 
-import React, { Component, PropTypes } from "react";
+import {Component, PropTypes} from "react";
 import {
     View,
     StyleSheet

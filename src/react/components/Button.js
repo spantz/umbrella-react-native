@@ -1,7 +1,7 @@
 "use strict";
 // @flow
 
-import React, {Component, PropTypes} from "react";
+import {Component, PropTypes} from "react";
 import {
     Text,
     TouchableOpacity
@@ -14,7 +14,7 @@ export default class Button extends Component {
     static propTypes = {
         onPress: PropTypes.func.isRequired,
         text: PropTypes.string.isRequired,
-        style: PropTypes.oneOfType([PropTypes.object, PropTypes.array, PropTypes.number]),
+        style: PropTypes.oneOfType([PropTypes.object, PropTypes.array, PropTypes.number])
     };
 
     render() {
