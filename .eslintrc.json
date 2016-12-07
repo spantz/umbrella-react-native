@@ -72,6 +72,7 @@
       "error",
       "never"
     ],
-    "no-multiple-empty-lines": "error"
+    "no-multiple-empty-lines": "error",
+    "no-console": "off"
   }
 }
