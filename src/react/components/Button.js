@@ -3,13 +3,12 @@
 
 import React, {Component, PropTypes} from "react";
 import {
-    View,
     Text,
-    TouchableOpacity,
-    StyleSheet
+    TouchableOpacity
 } from "react-native";
 
-import { Buttons } from "../../resources/styles";
+
+import {Buttons} from "../../resources/styles";
 
 export default class Button extends Component {
     static propTypes = {
@@ -27,4 +26,4 @@ export default class Button extends Component {
             </TouchableOpacity>
         );
     }
-};
+}

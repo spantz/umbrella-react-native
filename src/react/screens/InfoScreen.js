@@ -3,12 +3,10 @@
 
 import React from "react";
 import {
-    StyleSheet,
-    View,
-    Text
+    View
 } from "react-native";
-import { Button, Hero } from "../components";
-import { Global } from "../../resources/styles";
+import {Button, Hero} from "../components";
+import {Global} from "../../resources/styles";
 
 export default class InfoScreen extends React.Component {
     render() {
@@ -27,7 +25,7 @@ export default class InfoScreen extends React.Component {
                 <View>
                     {this.props.children}
                 </View>
-                <View style={[Global.View.container, Global.Grid.justifyEnd, { marginBottom: 10 }]}>
+                <View style={[Global.View.container, Global.Grid.justifyEnd, {marginBottom: 10}]}>
                     {buttonJsx}
                 </View>
             </View>

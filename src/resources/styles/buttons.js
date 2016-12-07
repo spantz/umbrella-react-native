@@ -5,7 +5,7 @@ import {
     StyleSheet
 } from "react-native";
 
-import { base } from "./typography";
+import {base} from "./typography";
 
 export default {
     primary: StyleSheet.create({

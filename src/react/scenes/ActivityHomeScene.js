@@ -2,14 +2,10 @@
 // @flow
 
 import React from "react";
-import {
-    View,
-    Text,
-    StyleSheet
-} from "react-native";
+import {View} from "react-native";
 
-import { Global } from "../../resources/styles";
-import { Button, Hero } from "../components";
+import {Global} from "../../resources/styles";
+import {Button, Hero} from "../components";
 
 export default class ActivityHomeScene extends React.Component {
     constructor(props) {
