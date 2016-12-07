@@ -2,7 +2,7 @@
   "parser": "babel-eslint",
   "env": {
     "es6": true,
-    "node": false,
+    "node": true,
     "browser": false
   },
   "parserOptions": {
@@ -60,6 +60,20 @@
       "error",
       "never"
     ],
-    "react/jsx-uses-vars": "error"
+    "react/jsx-uses-vars": "error",
+    "comma-dangle": [
+      "error",
+      "never"
+    ],
+    "comma-spacing": "error",
+    "func-names": [
+      "error",
+      "as-needed"
+    ],
+    "computed-property-spacing": [
+      "error",
+      "never"
+    ],
+    "no-multiple-empty-lines": "error"
   }
 }
