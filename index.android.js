@@ -1,19 +1,12 @@
 "use strict";
 
-import React, {Component} from "react";
-import {
-    AppRegistry,
-    StyleSheet,
-    Text,
-    View,
-    Navigator
-} from "react-native";
+import {Component} from "react";
+import {AppRegistry} from "react-native";
 
 import IntroFlow from "./src/react/flows/IntroFlow";
-import * as Styles from "./resources/styles";
+import * as Styles from "./src/resources/styles";
 
-import { background } from "./src/resources/images";
-
+import {background} from "./src/resources/images";
 
 
 export default class umbrellaReactNative extends Component {

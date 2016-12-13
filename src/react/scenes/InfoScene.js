@@ -4,33 +4,29 @@
 import React from "react";
 import Swiper from "react-native-swiper";
 import {
-    View,
-    Text,
     StyleSheet,
-    TouchableOpacity,
     Animated,
-    LayoutAnimation,
     Image,
     ScrollView
 } from "react-native";
 import AnimationFactory from "../../resources/factories/animations";
-import { sun, hill, cards } from "../../resources/images";
+import {sun, hill, cards} from "../../resources/images";
 
 import InfoScreen from "../screens/InfoScreen";
 import ActivityHomeScene from "./ActivityHomeScene";
 
-import { Card } from "../components";
+import {Card} from "../components";
 
 
 const animations = {
-    sun: new AnimationFactory({ bottom: [-300, -200], left: [-200, 105] }),
-    hill: new AnimationFactory({ opacity: [0, 1] })
+    sun: new AnimationFactory({bottom: [-300, -200], left: [-200, 105]}),
+    hill: new AnimationFactory({opacity: [0, 1]})
 };
 
 const styles = StyleSheet.create({
     sun: {
-        position: "absolute",
-    },  
+        position: "absolute"
+    },
     hill: {
         position: "absolute",
         top: 150,
@@ -70,8 +66,8 @@ export default class InfoScene extends React.Component {
         });
     }
 
-     componentDidMount() {
-        Animated.sequence([         
+    componentDidMount() {
+        Animated.sequence([
             animations.hill.getSequence(),
             animations.sun.getParallel()
         ]).start();

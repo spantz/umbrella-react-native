@@ -1,28 +1,22 @@
 "use strict";
 // @flow
 
-import React, {Component} from "react";
+import {Component} from "react";
 import {
     View,
-    Text,
-    Animated,
-    LayoutAnimation,
-    Easing,
-    StyleSheet,
-    TouchableOpacity,
-    Image
+    Animated
 } from "react-native";
 
-import { Button, Hero, Subhero } from "../components";
+import {Button, Hero, Subhero} from "../components";
 import AnimationFactory from "../../resources/factories/animations";
-import { Global } from "../../resources/styles";
-import { logo } from "../../resources/images";
+import {Global} from "../../resources/styles";
+import {logo} from "../../resources/images";
 
 
 const animations = {
-    logo: new AnimationFactory({ top: [1000, 0] }),
-    text: new AnimationFactory({ opacity: [0, 1] }),
-    button: new AnimationFactory({ top: [50, 0], opacity: [0, 1] })
+    logo: new AnimationFactory({top: [1000, 0]}),
+    text: new AnimationFactory({opacity: [0, 1]}),
+    button: new AnimationFactory({top: [50, 0], opacity: [0, 1]})
 };
 
 export default class WelcomeScene extends Component {
@@ -57,7 +51,7 @@ export default class WelcomeScene extends Component {
                     <Hero> Umbrella </Hero>
                     <Subhero> Your daily resource {"\n"} for mental health. </Subhero>
                 </Animated.View>
-                <Animated.View style={[Global.Grid.column, animations.button.getStyles(), { justifyContent: "flex-end" }]}>
+                <Animated.View style={[Global.Grid.column, animations.button.getStyles(), {justifyContent: "flex-end"}]}>
                      <Button
                         text="Let's Go"
                         onPress={this.props.onContinue.bind(this)}
