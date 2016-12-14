@@ -1,12 +1,11 @@
 "use strict";
 // @flow
 
-import React, {Component} from "react";
+import {Component} from "react";
 import {
-    View,
-    Text,
+    Text
 } from "react-native";
-import { Typography } from "../../resources/styles";
+import {Typography} from "../../resources/styles";
 
 
 export default class Hero extends Component {

@@ -1,5 +1,4 @@
 import "react-native";
-import React from "react";
 import Card from "../../src/react/components/Card";
 import {Text} from "react-native";
 import TestCase from "../../test-case";

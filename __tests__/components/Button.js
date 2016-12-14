@@ -1,5 +1,4 @@
 import "react-native";
-import React from "react";
 import Button from "../../src/react/components/Button";
 import TestCase from "../../test-case";
 
