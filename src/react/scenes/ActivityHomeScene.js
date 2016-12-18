@@ -10,11 +10,12 @@ import {
     ScrollView,
     Image
 } from "react-native";
-import { Global, Colors } from "../../resources/styles/";
+import {Global, Colors} from "../../resources/styles/";
 import Scale from "../../scale";
 import Card from "../components/Card";
 
 import Hero from "../components/Hero";
+import BreatheActivity from "./activities/BreatheActivity";
 
 const moodThumb = require("../../resources/img/activities/mood-thumb.png");
 const breatheThumb = require("../../resources/img/activities/mood-breathe.png");
@@ -37,7 +38,7 @@ const styles = StyleSheet.create({
             }
         ],
         alignItems: "center",
-        backgroundColor: "#2E8DD6",
+        backgroundColor: "#2E8DD6"
     },
     topSectionInView: {
         width: Scale.WINDOW_WIDTH,
@@ -109,6 +110,9 @@ const styles = StyleSheet.create({
         flex: -1,
         margin: 10
     },
+    cardButton: {
+        flex: 1
+    },
     cardHero: {
         color: Colors.black,
         flex: 1,
@@ -123,6 +127,18 @@ const styles = StyleSheet.create({
 });
 
 export default class ActivityHomeScene extends React.Component {
+    constructor(props) {
+        super(props);
+        this.goToBreathe = this.goToBreathe.bind(this);
+    }
+
+    goToBreathe() {
+        this.props.navigator.push({
+            index: 2,
+            component: BreatheActivity
+        });
+    }
+
     render() {
         return (
             <View style={[Global.View.body, styles.root]}>
@@ -166,16 +182,20 @@ export default class ActivityHomeScene extends React.Component {
                     <ScrollView pagingEnabled={false}>
                         <View style={styles.cardFlexer}>
                             <Card size={Card.CARD_SIZE_HALF} style={styles.card}>
-                                <Hero style={styles.cardHero}>
-                                    Mood
-                                </Hero>
-                                <Image source={moodThumb} resizeMode={"contain"} style={styles.cardImage}/>
+                                <TouchableOpacity style={styles.cardButton}>
+                                    <Hero style={styles.cardHero}>
+                                        Mood
+                                    </Hero>
+                                    <Image source={moodThumb} resizeMode={"contain"} style={styles.cardImage}/>
+                                </TouchableOpacity>
                             </Card>
                             <Card size={Card.CARD_SIZE_HALF} style={styles.card}>
-                                <Hero style={styles.cardHero}>
-                                    Breathe
-                                </Hero>
-                                <Image source={breatheThumb} resizeMode={"contain"} style={styles.cardImage}/>
+                                <TouchableOpacity style={styles.cardButton} onPress={this.goToBreathe}>
+                                    <Hero style={styles.cardHero}>
+                                        Breathe
+                                    </Hero>
+                                    <Image source={breatheThumb} resizeMode={"contain"} style={styles.cardImage}/>
+                                </TouchableOpacity>
                             </Card>
                         </View>
                     </ScrollView>
