@@ -1,14 +1,14 @@
 "use strict";
 // @flow
 
-import {Component} from "react";
+import React from "react";
 import {
     Text
 } from "react-native";
 import {Typography} from "../../resources/styles";
 
 
-export default class Hero extends Component {
+export default class Hero extends React.Component {
     render() {
         return (
             <Text style={[Typography.hero, this.props.style]}>
