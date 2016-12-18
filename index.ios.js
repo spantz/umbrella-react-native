@@ -1,20 +1,15 @@
 "use strict";
 
-import {Component} from "react";
+import React from "react";
 import {
     AppRegistry,
     StatusBar,
     Image
 } from "react-native";
 
-import IntroFlow from "./src/react/flows/IntroFlow";
-import * as Styles from "./src/resources/styles";
-
-import {background} from "./src/resources/images";
-
 import BreatheActivity from "./src/react/scenes/activities/BreatheActivity";
 
-export default class Umbrella extends Component {
+export default class Umbrella extends React.Component {
     render() {
         return (
             <BreatheActivity/>

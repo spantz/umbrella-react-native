@@ -1,7 +1,7 @@
 "use strict";
 // @flow
 
-import {Component} from "react";
+import React from "react";
 import {
     View,
     Animated
@@ -19,7 +19,7 @@ const animations = {
     button: new AnimationFactory({top: [50, 0], opacity: [0, 1]})
 };
 
-export default class WelcomeScene extends Component {
+export default class WelcomeScene extends React.Component {
 
     constructor(props) {
         super(props);
