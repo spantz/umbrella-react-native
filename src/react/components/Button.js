@@ -1,7 +1,7 @@
 "use strict";
 // @flow
 
-import {Component, PropTypes} from "react";
+import React, {PropTypes} from "react";
 import {
     Text,
     TouchableOpacity
@@ -10,7 +10,7 @@ import {
 import {Buttons} from "../../resources/styles";
 import type {Style} from "../../resources/styles";
 
-export default class Button extends Component {
+export default class Button extends React.Component {
     props: {
         onPress: () => void,
         text: string,
