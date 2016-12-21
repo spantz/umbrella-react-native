@@ -53,6 +53,7 @@ const Global = {
     })
 };
 
+export type Style = StyleSheet | Object | number | Array<StyleSheet | Object | number>;
 export {Global};
 export {Typography};
 export {Buttons};

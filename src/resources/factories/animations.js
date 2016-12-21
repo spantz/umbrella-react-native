@@ -17,7 +17,7 @@ import {
  * @class AnimationFactory
  */
 class AnimationFactory {
-    constructor(properties) {
+    constructor(properties: Object) {
         this.keys = Object.keys(properties);
         this._styles = {};
         this._triggers = [];

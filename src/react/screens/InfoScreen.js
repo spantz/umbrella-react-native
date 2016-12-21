@@ -6,9 +6,17 @@ import {
     View
 } from "react-native";
 import {Button, Hero} from "../components";
-import {Global} from "../../resources/styles";
+import {Global, Style} from "../../resources/styles";
 
 export default class InfoScreen extends React.Component {
+    props: {
+        onPress: () => void,
+        hero: string,
+        heroStyle?: Style,
+        style?: Style,
+        children?: any
+    };
+
     render() {
         let buttonJsx = null;
         if (typeof this.props.buttonText !== "undefined") {

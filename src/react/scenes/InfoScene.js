@@ -39,15 +39,23 @@ const styles = StyleSheet.create({
     }
 });
 
+//no props yet
+type Props = {
+    //TODO replace with type hinting for navigator
+    navigator: any
+};
+
 export default class InfoScene extends React.Component {
+    props: Props;
+
     swiper: Swiper;
 
-    constructor(props) {
+    constructor(props: Props) {
         super(props);
 
-        this.goForward = this.goForward.bind(this);
-        this.onSwiperMount = this.onSwiperMount.bind(this);
-        this.goToActivityIntro = this.goToActivityIntro.bind(this);
+        (this:any).goForward = this.goForward.bind(this);
+        (this:any).onSwiperMount = this.onSwiperMount.bind(this);
+        (this:any).goToActivityIntro = this.goToActivityIntro.bind(this);
     }
 
     goForward() {

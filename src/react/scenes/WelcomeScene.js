@@ -19,9 +19,16 @@ const animations = {
     button: new AnimationFactory({top: [50, 0], opacity: [0, 1]})
 };
 
+//empty props
+type Props = {};
+
 export default class WelcomeScene extends Component {
 
-    constructor(props) {
+    state: {
+        buttonDisabled: boolean
+    };
+
+    constructor(props: Props) {
         super(props);
         this.state = {
             buttonDisabled: true

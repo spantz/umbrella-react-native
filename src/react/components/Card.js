@@ -7,6 +7,7 @@ import {
     StyleSheet
 } from "react-native";
 import Scale from "../../scale";
+import {Style} from "../../resources/styles";
 
 const CARD_MARGIN = 40;
 const CARD_WIDTH = Scale.WINDOW_WIDTH - CARD_MARGIN * 2;
@@ -29,6 +30,11 @@ const styles = StyleSheet.create({
 });
 
 export default class Card extends Component {
+    props: {
+        style?: Style,
+        children: any
+    };
+
     static propTypes = {
         style: PropTypes.oneOfType([PropTypes.object, PropTypes.array, PropTypes.number])
     };
