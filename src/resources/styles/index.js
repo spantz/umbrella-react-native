@@ -8,6 +8,7 @@ import {
 import Typography from "./typography.js";
 import Buttons from "./buttons.js";
 import Utilities from "./utilities.js";
+import Colors from "./colors";
 
 const Global = {
     Image: StyleSheet.create({
@@ -58,3 +59,4 @@ export {Global};
 export {Typography};
 export {Buttons};
 export {Utilities};
+export {Colors};

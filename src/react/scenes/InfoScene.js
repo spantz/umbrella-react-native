@@ -17,6 +17,7 @@ import ActivityHomeScene from "./ActivityHomeScene";
 
 import {Card} from "../components";
 
+import realm from "./../../storage";
 
 const animations = {
     sun: new AnimationFactory({bottom: [-300, -200], left: [-200, 105]}),
@@ -67,6 +68,9 @@ export default class InfoScene extends React.Component {
     }
 
     goToActivityIntro() {
+        realm.write(() => {
+            realm.create("User", {id: 1, completedIntro: true}, true);
+        });
         this.props.navigator.push({
             index: 1,
             component: ActivityHomeScene,

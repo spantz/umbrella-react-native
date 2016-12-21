@@ -1,21 +1,17 @@
 "use strict";
 // @flow
 
-import {Component, PropTypes} from "react";
+import React from "react";
 import {
     Text
 } from "react-native";
-import {Typography, Style} from "../../resources/styles";
+import {Typography} from "../../resources/styles";
+import type {Style} from "../../resources/styles";
 
-
-export default class Hero extends Component {
+export default class Hero extends React.Component {
     props: {
-        style: Style,
-        children: any
-    };
-
-    static propTypes = {
-        style: PropTypes.oneOfType([PropTypes.object, PropTypes.array, PropTypes.number])
+        style?: Style,
+        children?: any
     };
 
     render() {

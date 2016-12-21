@@ -7,8 +7,8 @@ import {
 
 const WINDOW_WIDTH = Dimensions.get("window").width;
 
-function getWidth(percentage: number) {
-    return WINDOW_WIDTH / (percentage / 100);
+function getWidth(percentage) {
+    return WINDOW_WIDTH * (percentage / 100);
 }
 
 export default {

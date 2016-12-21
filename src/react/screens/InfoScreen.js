@@ -6,7 +6,8 @@ import {
     View
 } from "react-native";
 import {Button, Hero} from "../components";
-import {Global, Style} from "../../resources/styles";
+import {Global} from "../../resources/styles";
+import type {Style} from "../../resources/styles";
 
 export default class InfoScreen extends React.Component {
     props: {

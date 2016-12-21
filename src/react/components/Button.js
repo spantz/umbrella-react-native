@@ -7,7 +7,8 @@ import {
     TouchableOpacity
 } from "react-native";
 
-import {Buttons, Style} from "../../resources/styles";
+import {Buttons} from "../../resources/styles";
+import type {Style} from "../../resources/styles";
 
 export default class Button extends Component {
     props: {
