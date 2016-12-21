@@ -1,5 +1,7 @@
 [ignore]
 
+node_modules/*
+
 # We fork some components by platform.
 .*/*[.]android.js
 
