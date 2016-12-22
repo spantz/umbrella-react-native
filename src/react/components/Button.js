@@ -1,19 +1,32 @@
 "use strict";
 // @flow
 
-import React, {Component} from "react";
+import React, {PropTypes} from "react";
 import {
     Text,
     TouchableOpacity
 } from "react-native";
 
-
 import {Buttons} from "../../resources/styles";
+import type {Style} from "../../resources/styles";
 
-export default class Button extends Component {
+export default class Button extends React.Component {
+    props: {
+        onPress: () => void,
+        text: string,
+        style?: Style,
+        disabled?: boolean
+    };
+
     static propTypes = {
-        onPress: React.PropTypes.func.isRequired,
-        text: React.PropTypes.string.isRequired
+        onPress: PropTypes.func.isRequired,
+        text: PropTypes.string.isRequired,
+        style: PropTypes.oneOfType([PropTypes.object, PropTypes.array, PropTypes.number]),
+        disabled: PropTypes.bool
+    };
+
+    static defaultProps = {
+        disabled: false
     };
 
     render() {

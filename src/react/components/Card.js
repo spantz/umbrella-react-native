@@ -8,6 +8,8 @@ import {
 } from "react-native";
 import Scale from "../../scale";
 
+import type {Style} from "../../resources/styles";
+
 const CARD_FULL_MARGIN = 40;
 const CARD_FULL_WIDTH = Scale.WINDOW_WIDTH - CARD_FULL_MARGIN * 2;
 const CARD_HALF_MARGIN = 20;
@@ -43,8 +45,14 @@ const CARD_SIZE_FULL = "full_size";
 const CARD_SIZE_HALF = "half_size";
 
 export default class Card extends React.Component {
-    static CARD_SIZE_FULL = CARD_SIZE_FULL;
-    static CARD_SIZE_HALF = CARD_SIZE_HALF;
+    static CARD_SIZE_FULL: string = CARD_SIZE_FULL;
+    static CARD_SIZE_HALF: string = CARD_SIZE_HALF;
+
+    props: {
+        style?: Style,
+        size?: string,
+        children?: any
+    };
 
     static propTypes = {
         size: React.PropTypes.oneOf([CARD_SIZE_FULL, CARD_SIZE_HALF])

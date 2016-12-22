@@ -14,8 +14,17 @@ import * as Styles from "./../resources/styles";
 import {background} from "./../resources/images";
 import realm from "./../storage";
 
+type Props = {};
+
 export default class Application extends React.Component {
-    constructor(props) {
+    props: Props;
+
+    state: {
+        //TODO type hint user
+        user: any
+    };
+
+    constructor(props: Props) {
         super(props);
         //TODO if no ID, create new user, store it in asyncStorage
         this._loadInitialState();

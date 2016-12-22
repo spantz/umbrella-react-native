@@ -126,10 +126,16 @@ const styles = StyleSheet.create({
     }
 });
 
+type Props = {
+    navigator: any
+};
+
 export default class ActivityHomeScene extends React.Component {
-    constructor(props) {
+    props: Props;
+
+    constructor(props: Props) {
         super(props);
-        this.goToBreathe = this.goToBreathe.bind(this);
+        (this:any).goToBreathe = this.goToBreathe.bind(this);
     }
 
     goToBreathe() {

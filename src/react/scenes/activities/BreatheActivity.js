@@ -13,7 +13,7 @@ import {
     Hero,
     Subhero
 } from "../../components/";
-import { Global } from "../../../resources/styles";
+import {Global} from "../../../resources/styles";
 
 const styles = StyleSheet.create({
     activity: {
@@ -54,11 +54,21 @@ const styles = StyleSheet.create({
     }
 });
 
+type Props = {};
+
 export default class BreatheActivity extends React.Component {
-    constructor(props) {
+    props: Props;
+
+    state: {
+        introFinished: boolean,
+        bottom: any,
+        scale: any
+    };
+
+    constructor(props: Props) {
         super(props);
-        this.repeatAnimation = this.repeatAnimation.bind(this);
-        this.introAnimation = this.introAnimation.bind(this);
+        (this:any).repeatAnimation = this.repeatAnimation.bind(this);
+        (this:any).introAnimation = this.introAnimation.bind(this);
         this.state = {
             introFinished: false,
             bottom: new Animated.Value(700),
@@ -127,7 +137,7 @@ export default class BreatheActivity extends React.Component {
                     </Subhero>
                 </View>
                 <View style={styles.dropContainer}>
-                    <Animated.View style={[ballStyles, { bottom: this.state.bottom, transform: [{ scale: this.state.scale }] }]}>
+                    <Animated.View style={[ballStyles, {bottom: this.state.bottom, transform: [{scale: this.state.scale}]}]}>
                         <View style={[styles.orb]}/>
                     </Animated.View>
                 </View>

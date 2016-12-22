@@ -19,9 +19,23 @@ const animations = {
     button: new AnimationFactory({top: [50, 0], opacity: [0, 1]})
 };
 
+type Props = {
+    onContinue: () => void
+};
+
 export default class WelcomeScene extends React.Component {
 
-    constructor(props) {
+    props: Props;
+
+    state: {
+        buttonDisabled: boolean
+    };
+
+    static propTypes = {
+        onContinue: React.PropTypes.func.isRequired
+    };
+
+    constructor(props: Props) {
         super(props);
         this.state = {
             buttonDisabled: true
